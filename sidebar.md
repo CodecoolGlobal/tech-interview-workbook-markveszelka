@@ -7,7 +7,3 @@
     * Advanced module
         * [Enterprise](docs/module_advanced_enterprise_general.md)
         * [Enterprise with Java](docs/module_advanced_enterprise_java.md)
-        * [Enterprise with C#](docs/module_advanced_enterprise_csharp.md)
-        * [Test automation](docs/module_advanced_test_automation.md)
-        * [DevOps module](docs/module_advanced_devops.md)
-        * [Data module](docs/module_advanced_data.md)
