@@ -84,15 +84,15 @@ console.log(greeter); // Expected: 'hey hi'
 
 let greeter = "hey hi";
 if (true) {
-  let hello = "say Hello instead";
-  console.log(hello); // Expected: 'say Hello instead'
+    let hello = "say Hello instead";
+    console.log(hello); // Expected: 'say Hello instead'
 }
 console.log(hello); // Expected: 'Reference Error: hello is not defined'
 
 // CONST:
 const greeter = "hey hi";
-greeter = "say Hello instead"; // Expected: 'TypeError: Assignment to constant variable'
-console.log(greeter);
+greeter = "say Hello instead";
+console.log(greeter); // Expected: 'TypeError: Assignment to constant variable'
 ```
 
 #### Write an example where using the `var` declaration instead of the `let` could create a hard to debug code.
@@ -109,11 +109,11 @@ function doSomething() {
 doSomething();
 ```
 
-In this code, we have a function called `doSomething()` that uses a for loop to iterate over an array. Inside the loop, 
+In this code, we have a function called `doSomething()` that uses a for loop to iterate over an array. Inside the loop,
 we use `setTimeout` to print the value of the loop variable `i` to the console after a delay of one second.
 
 If we use var to declare the loop variable 'i', `we will encounter a problem`: the value of 'i' inside the setTimeout
-callback will be the same for all three iterations of the loop, and `it will be equal to 3` (the value of i when the 
+callback will be the same for all three iterations of the loop, and `it will be equal to 3` (the value of i when the
 loop completes).
 
 This is because `var has function scope`, so the variable 'i' is accessible throughout the entire function, not just
@@ -122,47 +122,45 @@ which has been incremented to 3 by the end of the loop.
 
 To fix this problem, we can use let instead of var, which will give us block scope for the loop variable 'i'.
 
-#### Give a practical example where you would use the `reduce` function in javascript.
+#### Give a practical example where you would use the `reduce` function in JavaScript.
 
-The `reduce()` method executes a user-supplied "reducer" callback function on each element of the array, in order,
+The `Array.prototype.reduce()` method executes a user-supplied "reducer" callback function on each element of the array,
+in order,
 passing in the return value from the calculation on the preceding element. The final result of running the reducer
 across all elements of the array is a `single value`.
 
 ```js
+// Calculate the sum of an array of numbers
 const array1 = [1, 2, 3, 4];
 // 0 + 1 + 2 + 3 + 4
 const initialValue = 0;
-const sumWithInitial = array1.reduce(
-    (accumulator, currentValue) => accumulator + currentValue,
-    initialValue
-);
-console.log(sumWithInitial);
-// Expected output: 10
+const sumWithInitial = array1.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+}, initialValue);
+console.log(sumWithInitial); // Expected output: 10
 ```
 
 #### Give a practical example where you would use the `map` function in javascript.
 
-The `map()` method `creates a new array` populated with the results of calling a provided function on every element in
-the calling array.
+The `Array.prototype.map()` method `creates a new array` populated with the results of calling a provided function on
+every element in the calling array.
 
 ```js
-const array1 = [1, 4, 9, 16];
+const array = [1, 4, 9, 16];
 // Pass a function to map
-const map1 = array1.map((x) => x * 2);
-console.log(map1);
-// Expected output: Array [2, 8, 18, 32]
+const map = array.map((x) => x * 2);
+console.log(map); // Expected output: Array [2, 8, 18, 32]
 ```
 
 #### Give a practical example where you would use the `filter` function in javascript.
 
-The `filter()` method `creates a shallow copy` of a portion of a given array, filtered down to just the elements from
-the given array that pass the test implemented by the provided function.
+The `Array.prototype.filter()` method `creates a shallow copy` of a portion of a given array, filtered down to just the
+elements from the given array that pass the test implemented by the provided function.
 
 ```js
 const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 const result = words.filter(word => word.length > 6);
-console.log(result);
-// Expected output: Array ["exuberant", "destruction", "present"]
+console.log(result); // Expected output: Array ["exuberant", "destruction", "present"]
 ```
 
 ### Web basics
@@ -192,39 +190,39 @@ to as the networking computing model or client-server network.
 #### What is the difference between synchronous and asynchronous execution?
 
 `Synchronous` execution means the first task in a program `must finish processing before moving on` to executing the
-next task whereas
-`asynchronous` execution means a second task can begin executing `in parallel`, without waiting for an earlier task to
+next task whereas \
+`Asynchronous` execution means a second task can begin executing `in parallel`, without waiting for an earlier task to
 finish.
 
 #### What is `npm`? Why is it useful?
 
 `NPM (Node Package Manager)` is a package manager for the Node JavaScript platform. It consists of a npm registry that
 enables Open-Source developers to publish and share their code.
-All `npm` packages are defined in files called package.json.
-The content of package.json must be written in JSON.
-`npm` is installed with Node.js
-`npm` can manage dependencies.
-`npm` is the world's largest Software Registry.
+All `npm` packages are defined in files called `package.json`.
+The content of `package.json must be written in JSON`. \
+`npm` is installed with Node.js \
+`npm` can manage dependencies. \
+`npm` is the world's largest Software Registry. \
 The registry contains over 800,000 code packages.
 
-#### What is the difference between the `depdendencies` & `devDependencies` in a `package.json` file ?
+#### What is the difference between the `depdendencies` & `devDependencies` in a `package.json` file?
 
-`Dependencies`:
-`Dependencies` are libraries on which the project relies to function effectively.
-Production dependencies are fundamental dependencies that are required to complete the project.
+- `Dependencies`:
+  Dependencies are libraries on which the project relies to function effectively.
+  Production dependencies are fundamental dependencies that are required to complete the project.
 
-`Development Depenencies`:
-As a developer, you may want to install dependencies to build and test your website. The packages required by a
-developer during development are called `devDependencies`. Dependencies that you might need at some point in the
-development process, but not during execution. They are not included in the production version and will not be
-downloaded to end user’s browser caches. For example, `Nodemon`, lodash, Babel etc.
+- `Development Depenencies`:
+  As a developer, you may want to install dependencies to build and test your website. The packages required by a
+  developer during development are called `devDependencies`. Dependencies that you might need at some point in the
+  development process, but not during execution. They are not included in the production version and will not be
+  downloaded to end user’s browser caches. For example, `Nodemon`, lodash, Babel etc.
 
-`Package.json`:
-All `npm` packages are defined in files called package.json. The content of package.json must be written in JSON.
-`Package.json specifies these dependencies` under the key “dependencies”. These are the packages used in the project
-code.
+- `Package.json`:
+  All `npm` packages are defined in files called package.json. The content of package.json must be written in JSON.
+  `Package.json specifies these dependencies` under the key “dependencies”. These are the packages used in the project
+  code.
 
-#### What would be the impact of javascript `fetch` if it was not asynchronous ?
+#### What would be the impact of javascript `fetch` if it was not asynchronous?
 
 - `Slowed performance`: Since the code would have to wait for the network request to complete before continuing, this
   would slow down the performance of the application, particularly if the request takes a long time to complete.
@@ -235,34 +233,29 @@ code.
 - `Limited concurrency`: Since JavaScript is a single-threaded language, blocking network requests would limit the
   concurrency of the application, making it difficult to handle multiple requests at once.
 
-By making the 'fetch' method asynchronous, JavaScript allows the network request to be made in the background while
-other code can continue to execute. This keeps the UI responsive and allows multiple requests to be made concurrently,
-improving the performance and user experience of the application.
+By `making the 'fetch' method asynchronous`, JavaScript allows the network request to be made in the background while
+other code can continue to execute. This `keeps the UI responsive`and `allows multiple requests to be made 
+concurrently`, `improving the performance and user experience` of the application.
 
-#### What benefits would bring to a developer to use the `Postman` application ?
+#### What benefits would bring to a developer to use the `Postman` application?
 
 `Postman is an API Platform for developers to design, build, test and iterate their APIs.`
-`User-friendliness`: With a simple interface, testers can quickly create test suites by filling in templates.
-`Accessibility`: Postman users can access their files seamlessly by logging into their account on a device with the
+- `User-friendliness`: With a simple interface, testers can quickly create test suites by filling in templates.
+- `Accessibility`: Postman users can access their files seamlessly by logging into their account on a device with the
 Postman application installed or Postman browser extension.
-`Various functionalities`: Postman supports all possible HTTP methods, saving progress, converting from APIs to code,
+- `Various functionalities`: Postman supports all possible HTTP methods, saving progress, converting from APIs to code,
 changing the API development environment, and many others.
-`Request tracking capabilities`: For HTTP Response in Postman, it supports several status codes for users to verify the
-response. They are Successful requests, Empty response, Bad request, and Unauthorized access, to mention but a few.
+- `Request tracking capabilities`: For HTTP Response in Postman, it supports several status codes for users to verify 
+the response. They are Successful requests, Empty response, Bad request, and Unauthorized access, to mention but a few.
 
-#### List the parts of the URL.
+#### List the `parts of the URL`.
 
-A `URL` (Uniform Resource Locator) is a specific type of URI (Universal Resource Identifier). A URL normally locates an
+A `URL (Uniform Resource Locator)` is a specific type of URI (Universal Resource Identifier). A URL normally locates an
 existing resource on the Internet.
-Figure 1. Syntax of an HTTP URL:
-.-:80-----.
-> > -http://--+-host name--+--+---------+--/--path component------>
-'-IP address-'  '-:--port-'
-
-> --+-----------------+-----------------------------------------><
-'-?--query string-'   
-"http:// www.example.com/questions/3456/my-document"
-> scheme:// host:port/ path?query
+```html
+scheme://host:port/path?query
+```
+> ![img.png](img.png)
 
 #### What is query parameter?
 
@@ -270,22 +263,21 @@ Figure 1. Syntax of an HTTP URL:
 elements inserted in your URLs to help you filter and organize content or track information on your website. They are
 extensions of the URL that are used to help define specific content or actions based on the data being passed. To append
 query params to the end of a URL, a `'?'` Is added followed immediately by a query parameter.
-
-https//www.domain.com/page `? key1 = value1 &` key2=value2
-`'?'`: query string begins, `key1`: first variable name, `'='`: value separator, `value1`: first property value, `&`:
-separator
+![img_1.png](img_1.png)
 
 #### What kind of HTTP status codes do you know?
 
-1. Informational responses (100 – 199)
-2. Successful responses (200 – 299):
+1. Informational responses (100 – 199): \
+   `100 Continue`
+2. Successful responses (200 – 299): \
    `200 OK`: The request succeeded.
-3. Redirection messages (300 – 399)
-4. Client error responses (400 – 499):
+3. Redirection messages (300 – 399): \
+   `304 Not Modified`
+4. Client error responses (400 – 499): \
    `400 Bad Request`: The server cannot or will not process the request due to something that is perceived to be a
-   client error (e.g., malformed request syntax).
+   client error (e.g., malformed request syntax). \
    `404 Not Found`: The server cannot find the requested resource. In the browser, this means the URL is not recognized.
-5. Server error responses (500 – 599):
+5. Server error responses (500 – 599): \
    `500 Internal Server Error`:
    The server has encountered a situation it does not know how to handle.
 
@@ -295,6 +287,8 @@ separator
 - `Headers`: These provide additional information about the request, such as the content type, cookies, and caching
   directives.
 - `Body`: This contains any data being sent along with the request, such as form data or JSON payloads.
+
+![img_2.png](img_2.png)
 
 #### How does an HTTP Response look like? What are the most relevant HTTP header fields?
 
