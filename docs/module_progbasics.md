@@ -118,6 +118,19 @@ A callback function in JavaScript is a function that is passed as an argument to
 some kind of event, such as a click or an API response, has taken place. Callbacks allow for asynchronous programming,
 allowing the main execution of code to continue while the callback function is executed at a later time.
 
+```js
+function myFirst() {
+  myDisplayer("Hello");
+}
+
+function mySecond() {
+  myDisplayer("Goodbye");
+}
+
+myFirst();
+mySecond();
+```
+
 #### What are the differences between `for` loops and `forEach`?
 
 `Syntax`: `for loops` have a more complex syntax, which allows for more control over the iteration, including the use of
@@ -223,9 +236,9 @@ display: block and display: inline are two CSS layout display modes.
 Differences:
 
 `display: block`: elements are displayed as blocks, taking up the full width of the parent container and creating a new
-line after the block. Examples: headings, paragraphs, divs.
+line after the block. Examples: headings, paragraphs, divs.\
 `display: inline`: elements are displayed inline, taking up only as much width as necessary and not creating a new line.
-Examples: span, anchor, image.
+Examples: span, anchor, image.\
 Note: inline-block and flex are other display modes that have properties between block and inline.
 
 #### What are the differences between `position: relative` and `position: absolute` CSS properties?
@@ -235,10 +248,10 @@ position: relative and position: absolute are two CSS position modes.
 Differences:
 
 `position: relative`: elements are positioned relative to their normal position, and can be shifted with top, right,
-bottom, and left properties. Other elements on the page will not be affected.
+bottom, and left properties. Other elements on the page will not be affected.\
 `position: absolute`: elements are positioned relative to the nearest positioned ancestor, instead of the viewport, if
 any; otherwise, it will be positioned relative to the initial containing block. It is removed from the normal flow of
-the page and does not affect the position of other elements.
+the page and does not affect the position of other elements.\
 Note: fixed is another position mode that is fixed relative to the viewport.
 
 #### What is the `box model`, name the CSS properties connecting to it?
@@ -248,29 +261,29 @@ the `content, padding, border, and margin`.
 
 `CSS properties` related to the box model:
 
-width and height: set the width and height of the content area.
+width and height: set the width and height of the content area.\
 padding: adds space within the border and around the content. Can be set for all four sides (padding), or individually (
-padding-top, padding-right, padding-bottom, padding-left).
+padding-top, padding-right, padding-bottom, padding-left).\
 border: adds a border around the padding and content. Can be set for all four sides (border), or individually (
-border-top, border-right, border-bottom, border-left).
+border-top, border-right, border-bottom, border-left).\
 margin: adds space outside the border. Can be set for all four sides (margin), or individually (margin-top,
 margin-right, margin-bottom, margin-left).
 
 #### What CSS properties affect `font and text appearance`?
 
-The following CSS properties can be used to affect font and text appearance:
+The following CSS properties can be used to affect font and text appearance:\
 
-font-family: sets the font-face for text.
-font-size: sets the size of the text.
-font-weight: sets the thickness of the text.
-font-style: sets the style of the text (italic or oblique).
-line-height: sets the height of each line of text.
-text-align: sets the horizontal alignment of the text (left, center, right, justify).
-text-decoration: sets the decoration applied to text (underline, overline, line-through).
-text-transform: sets the capitalization of text (uppercase, lowercase, capitalize).
-letter-spacing: sets the spacing between characters.
-word-spacing: sets the spacing between words.
-color: sets the color of the text.
+font-family: sets the font-face for text.\
+font-size: sets the size of the text.\
+font-weight: sets the thickness of the text.\
+font-style: sets the style of the text (italic or oblique).\
+line-height: sets the height of each line of text.\
+text-align: sets the horizontal alignment of the text (left, center, right, justify).\
+text-decoration: sets the decoration applied to text (underline, overline, line-through).\
+text-transform: sets the capitalization of text (uppercase, lowercase, capitalize).\
+letter-spacing: sets the spacing between characters.\
+word-spacing: sets the spacing between words.\
+color: sets the color of the text.\
 text-shadow: adds a shadow to the text.
 
 #### What are the steps of adding or removing an HTML element's class name?
@@ -304,7 +317,7 @@ Whenever you create a variable in JavaScript, that variable can store one of two
 a `reference value`. If the value is a number, string, boolean, undefined, null, or symbol, it's a primitive value. If
 it's anything else (i.e. typeof object), it's a reference value.
 
-`Primitive Values`:
+`Primitive Values`:\
 number\
 string\
 boolean\
@@ -313,8 +326,8 @@ null\
 symbol\
 bigint
 
-`Reference Values`:
-anything that is "typeof" "object"
+`Reference Values`:\
+anything that is "typeof" "object"\
 objects\
 arrays\
 functions
@@ -414,15 +427,15 @@ It is recommended to `always declare variables at the top of their scope` to avo
 #### What are the `advantages of using a version control system`?
 
 `Collaboration`: multiple developers can work on the same codebase simultaneously, and changes can be easily merged
-together.
+together.\
 `Backup`: version control systems keep a history of all changes made to the code, so it is easy to revert to a previous
-version if necessary.
+version if necessary.\
 `Traceability`: version control systems allow you to track who made each change and why, making it easier to understand
-the history of the code and debug issues.
+the history of the code and debug issues.\
 `Branching`: version control systems allow you to create separate branches for different features or bug fixes, so you
-can work on multiple features simultaneously without affecting the main codebase.
+can work on multiple features simultaneously without affecting the main codebase.\
 `Automation`: version control systems can be integrated with other tools, such as continuous integration and deployment
-pipelines, to automate tasks such as building, testing, and deploying code.
+pipelines, to automate tasks such as building, testing, and deploying code.\
 `Portability`: version control systems allow you to move your code to different systems and environments, making it
 easier to work on the same codebase from different locations.
 
