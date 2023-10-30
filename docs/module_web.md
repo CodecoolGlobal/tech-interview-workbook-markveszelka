@@ -165,7 +165,7 @@ console.log(result); // Expected output: Array ["exuberant", "destruction", "pre
 
 ### Web basics
 
-#### What is a web server?
+#### What is a `web server`?
 
 On the `hardware side`, a web server is a computer that stores web server software and a website's component files (for
 example, HTML documents, images, CSS stylesheets, and JavaScript files). A web server connects to the Internet and
@@ -181,13 +181,13 @@ via HTTP. When the request reaches the correct (hardware) web server, the (softw
 finds the requested document, and sends it back to the browser, also through HTTP. (If the server doesn't find the
 requested document, it returns a 404 response instead.)
 
-#### Explain the client-server architecture.
+#### Explain the `client-server architecture`.
 
 The `client-server architecture` refers to a system that hosts, delivers, and manages most of the resources and services
 that the client requests. In this model, all requests and services are delivered over a network, and it is also referred
 to as the networking computing model or client-server network.
 
-#### What is the difference between synchronous and asynchronous execution?
+#### What is the difference between `synchronous` and `asynchronous` execution?
 
 `Synchronous` execution means the first task in a program `must finish processing before moving on` to executing the
 next task whereas \
@@ -234,27 +234,31 @@ The registry contains over 800,000 code packages.
   concurrency of the application, making it difficult to handle multiple requests at once.
 
 By `making the 'fetch' method asynchronous`, JavaScript allows the network request to be made in the background while
-other code can continue to execute. This `keeps the UI responsive`and `allows multiple requests to be made 
+other code can continue to execute. This `keeps the UI responsive`and `allows multiple requests to be made
 concurrently`, `improving the performance and user experience` of the application.
 
 #### What benefits would bring to a developer to use the `Postman` application?
 
 `Postman is an API Platform for developers to design, build, test and iterate their APIs.`
+
 - `User-friendliness`: With a simple interface, testers can quickly create test suites by filling in templates.
 - `Accessibility`: Postman users can access their files seamlessly by logging into their account on a device with the
-Postman application installed or Postman browser extension.
+  Postman application installed or Postman browser extension.
 - `Various functionalities`: Postman supports all possible HTTP methods, saving progress, converting from APIs to code,
-changing the API development environment, and many others.
-- `Request tracking capabilities`: For HTTP Response in Postman, it supports several status codes for users to verify 
-the response. They are Successful requests, Empty response, Bad request, and Unauthorized access, to mention but a few.
+  changing the API development environment, and many others.
+- `Request tracking capabilities`: For HTTP Response in Postman, it supports several status codes for users to verify
+  the response. They are Successful requests, Empty response, Bad request, and Unauthorized access, to mention but a
+  few.
 
 #### List the `parts of the URL`.
 
 A `URL (Uniform Resource Locator)` is a specific type of URI (Universal Resource Identifier). A URL normally locates an
 existing resource on the Internet.
+
 ```html
 scheme://host:port/path?query
 ```
+
 > ![img.png](img.png)
 
 #### What is query parameter?
@@ -298,19 +302,19 @@ query params to the end of a URL, a `'?'` Is added followed immediately by a que
   directives.
 - `Body`: This contains the data being returned by the server, such as HTML, JSON, or an image
 
-#### Why should you ignore the `node_modules` folder in `.gitignore` ?
+#### Why should you ignore the `node_modules` folder in `.gitignore`?
 
-The node_modules folder contains all the saved JavaScript dependencies of a project. The `node_modules folder` has a
-massive size (up to Gigabytes).
+The node_modules folder contains all the saved JavaScript dependencies of a project. The `node_modules folder has a
+massive size (up to Gigabytes)`.
 It is easy to recreate the node_modules folder via packages.json. It is unnecessary to commit code that you didn't
 write (in most cases).
 
 ### Rest API: Serve and Fetch
 
-#### Why is it recommended for a developer to use the http methods `get`, `put`, `delete` ?
+#### Why is it recommended for a developer to use the `HTTP methods` `get`, `put`, `delete`?
 
 Using `HTTP methods` such as 'GET', 'PUT', and 'DELETE' is a recommended practice for web developers because they adhere
-to the principles of Representational State Transfer (REST), which is a widely-used architectural style for designing
+to the `principles of Representational State Transfer (REST)`, which is a widely-used architectural style for designing
 networked applications.
 
 - `GET`: This method is used to `retrieve information` or resources from a server. It is safe and idempotent, meaning it
@@ -318,11 +322,11 @@ networked applications.
 - `PUT`: This method is used to `update or create` a resource on the server
 - `DELETE`: This method is used to `delete` a resource on the server.
 
-Using these HTTP methods in a consistent and meaningful way helps to create a well-designed and predictable API, which
+Using these HTTP methods in a `consistent and meaningful way` helps to create a well-designed and predictable API, which
 can improve the maintainability, scalability, and reliability of web applications. It also adheres to the principles of
 the HTTP protocol, which is the foundation of communication on the World Wide Web.
 
-#### How does a `POST` request look like when it is made from a web browser (on the front end written) ?
+#### How does a `POST request` look like when it is made from a web browser (on the frontend written)?
 
 ```js
 const createSomething = (something) => {
@@ -336,25 +340,25 @@ const createSomething = (something) => {
 };
 ```
 
-#### What is an API?
+#### What is an `API`?
 
-`API` stands for `Application Programming Interface`. APIs are mechanisms
-that `enable two software components to communicate with each other` using a `set of definitions and protocols`. For
-example, the weather bureau’s software system contains daily weather data. The weather app on your phone “talks” to this
-system via APIs and shows you daily weather updates on your phone.
+`API` stands for `Application Programming Interface`. APIs are mechanisms that `enable two software components to
+communicate with each other using a set of definitions and protocols`. For example, the weather bureau’s software
+system contains daily weather data. The weather app on your phone 'talks' to this system via APIs and shows you daily
+weather updates on your phone. An API is a Collection of HTTP endpoints on the server side.
 
-`Data Retrieval`: APIs allow developers to request and retrieve specific data or information from a service or
-application. For example, a weather API can provide real-time weather data when queried with location information.
-`Functionality Integration`: APIs enable developers to integrate functionalities or services provided by other
-applications into their own software. This allows them to leverage existing tools and services without having to build
-everything from scratch.
-`Application Development`: APIs often provide libraries, frameworks, or SDKs (Software Development Kits) that simplify
-the development process by offering pre-built functions and components. These tools provide a consistent interface and
-functionality, making it easier for developers to create new applications.
-`Service Interaction`: APIs facilitate communication and interaction between different services or systems. For example,
-an API may be used to send notifications, process payments, or connect to social media platforms.
+- `Data Retrieval`: APIs allow developers to request and retrieve specific data or information from a service or
+  application. For example, a weather API can provide real-time weather data when queried with location information.
+- `Functionality Integration`: APIs enable developers to integrate functionalities or services provided by other
+  applications into their own software. This allows them to leverage existing tools and services without having to build
+  everything from scratch.
+- `Application Development`: APIs often provide libraries, frameworks, or SDKs (Software Development Kits) that simplify
+  the development process by offering pre-built functions and components. These tools provide a consistent interface and
+  functionality, making it easier for developers to create new applications.
+- `Service Interaction`: APIs facilitate communication and interaction between different services or systems.
+- For example, an API may be used to send notifications, process payments, or connect to social media platforms.
 
-#### What is REST API?
+#### What is `REST API`?
 
 `REST API` stands for `Representational State Transfer Application Programming Interface`. It is a set of constraints
 and principles for designing networked applications. REST is an architectural style that defines a set of constraints
@@ -362,40 +366,44 @@ to be used when creating web services. A RESTful API is an API that adheres to t
 
 `REST is based on a client-server architecture`, where the `client` (such as a web browser or a mobile
 app) `interacts with a server` (a web service or a backend application) to request and manipulate resources. Resources
-are identified by URIs (Uniform Resource Identifiers), and clients can perform operations on these resources using
-standard HTTP methods, such as 'GET', 'POST', 'PUT', 'DELETE', etc.
+are identified by `URIs (Uniform Resource Identifiers)`, and clients can perform operations on these resources using
+standard `HTTP methods, such as 'GET', 'POST', 'PUT', 'DELETE'`, etc.
 
-#### What is JSON and how do we use it?
+![img_3.png](img_3.png)
 
-`JSON` is used for representing structured data in a `simple and portable format`. It consists of key-value pairs, where
-keys are strings and values can be strings, numbers, boolean values, arrays, or nested JSON objects. JSON data is
-represented using a syntax that is similar to JavaScript object literal notation, which makes it easy to understand and
-manipulate by both humans and machines.
+#### What is `JSON` and how do we use it?
+
+`JSON (JavaScript Object Notation)` is used for representing structured data in a `simple and portable format`. It
+`consists of key-value pairs`, where `keys` are strings and `values` can be strings, numbers, boolean values, arrays,
+or nested JSON objects. JSON data is represented using a syntax that is similar to JavaScript object literal notation,
+which makes it easy to understand and manipulate by both humans and machines.
 To use JSON in a web application, you can use JavaScript to parse JSON strings into JavaScript objects, and vice versa.
 In JavaScript, you can use the JSON object, which provides methods like `'JSON.parse()'` to parse JSON strings into
 JavaScript objects, and `'JSON.stringify()'` to convert JavaScript objects into JSON strings. Similarly, in other
 programming languages, there are libraries or built-in functions available to parse and generate JSON data.
 
-#### What is API versioning ?
+![img_4.png](img_4.png)
+
+#### What is `API versioning` ?
 
 API versioning allows for changes and updates to be made to an API while minimizing the impact on existing client
 applications. It helps maintain backward compatibility and smooth evolution of APIs over time, allowing developers to
 make improvements and fix issues without disrupting existing API consumers.
 
-#### Give 3 examples of HTTP response status codes ? Explain what each number means.
+#### Give `3 examples of HTTP response status codes` ? Explain what each number means.
 
-`200 OK`: This status code indicates a successful HTTP request. It means that the server has successfully processed the
-request, and the requested data is included in the response body. This status code is commonly used for successful GET,
-PUT, and DELETE requests.
+`200 OK`: This status code indicates a `successful HTTP request`. It means that the server has successfully processed
+the request, and the requested data is included in the response body. This status code is commonly used for successful
+GET, PUT, and DELETE requests.
 
-`404 Not Found`: This status code indicates that the requested resource could not be found on the server. It means that
-the server was unable to locate the resource specified in the URL provided in the request. This status code is commonly
-used when a client requests a resource that does not exist or has been removed from the server.
+`404 Not Found`: This status code indicates that the requested `resource could not be found on the server`. It means
+that the server was unable to locate the resource specified in the URL provided in the request. This status code is
+commonly used when a client requests a resource that does not exist or has been removed from the server.
 
-`500 Internal Server Error`: This status code indicates that the server encountered an unexpected error while processing
-the request. It means that there was an issue on the server side that prevented the request from being fulfilled. This
-status code is commonly used when there is a server-side error, such as a bug in the application code or an issue with
-the server configuration.
+`500 Internal Server Error`: This status code indicates that
+the `server encountered an unexpected error while processing the request`. It means that there was an issue on the
+server side that prevented the request from being fulfilled. This status code is commonly used when there is a
+server-side error, such as a bug in the application code or an issue with the server configuration.
 
 ### Advanced JavaScript
 
@@ -405,9 +413,22 @@ The ternary operator is a `shorthand way of writing an 'if-else'` statement in J
 
 ```js
 (condition) ? valueIfTrue : valueIfFalse
+
+function getFee(isMember) {
+    return isMember ? '$2.00' : '$10.00';
+}
+
+console.log(getFee(true));
+// Expected output: "$2.00"
+
+console.log(getFee(false));
+// Expected output: "$10.00"
+
+console.log(getFee(null));
+// Expected output: "$10.00"
 ```
 
-#### How to import a function from another module in JavaScript?
+#### How to `import a function from another module` in JavaScript?
 
 In JavaScript, you can use the 'import' statement to import a function or other entities (such as objects, classes, or
 variables) from another module. Here's the basic syntax for importing a function from another module:
@@ -416,24 +437,50 @@ variables) from another module. Here's the basic syntax for importing a function
 import {functionName} from './modulePath';
 ```
 
-#### What is a shallow copy on an object?
+#### What is a `shallow copy` on an object?
 
-In JavaScript, a `shallow copy` of an object refers to a new object that
-is `created by copying the references of the original object's properties to the new object`, without actually creating
-new copies of the property values themselves. In other
-words, `the new object shares the same references to the properties as the original object`, but any changes made to the
-property values in the new object will not affect the original object, and vice versa.
+In JavaScript, a `shallow copy` of an object refers to a new object that is `created by copying the references of the
+original object's properties to the new object, without actually creating new copies of the property values themselves`.
+In other words, `the new object shares the same references to the properties as the original object`, but any changes
+made to the property values in the new object will not affect the original object, and vice versa.
 
-#### What is a callback function? Tell some examples of its usage.
+![img_5.png](img_5.png)
 
-Higher-Order Functions(HoF) and Callback Functions(CB) are different.
+```js
+// SHALLOW COPY With Array.from()
+Array.from();
+const ingredientsList = ["noodles", {list: ["eggs", "flour", "water"]}];
+
+const ingredientsListCopy = Array.from(ingredientsList);
+console.log(ingredientsListCopy);
+// ["noodles",{"list":["eggs","flour","water"]}]
+
+// DEEP COPY With structureClone()
+// Create an object with a value and a circular reference to itself.
+const original = {name: "MDN"};
+original.itself = original;
+
+// Clone it
+const clone = structuredClone(original);
+
+console.assert(clone !== original); // the objects are not the same (not same identity)
+console.assert(clone.name === "MDN"); // they do have the same values
+console.assert(clone.itself === clone); // and the circular reference is preserved
+```
+
+#### What is a `callback function`? Tell some examples of its usage.
+
+Higher-Order Functions(HoF) and Callback Functions(CB) are different.\
 `Higher-Order Functions(HoF)`: A function that takes another function(s) as an argument(s) and/or returns a function as
-a value.
+a value.\
+
+![img_6.png](img_6.png)
+
 `Callback Functions(CB)`: A function that is passed to another function.
 
 - `Asynchronous operations:` Callback functions are commonly used in asynchronous programming, where operations are
   non-blocking and do not halt the execution of the program. For example, in JavaScript, callback functions can be used
-  with functions like 'setTimeout' and 'fetch' to execute code after a certain period of time or when data is retrieved
+  with functions like `setTimeout` and `fetch` to execute code after a certain period of time or when data is retrieved
   from a server, respectively. The callback function is called when the operation is complete, allowing the program to
   continue executing other tasks in the meantime.
 
@@ -444,7 +491,7 @@ a value.
   ```
 
 - `Event handling:` Callback functions are often used to handle events in event-driven programming. For example, in web
-  development, JavaScript uses event listeners that are callback functions to respond to user interactions such as
+  development, JavaScript uses `EventListeners` that are callback functions to respond to user interactions such as
   button clicks, mouse movements, and keyboard events.
 
 ```js
@@ -467,10 +514,11 @@ a value.
 });
 ```
 
-#### What is object destructuring in javascript?
+#### What is `object destructuring` in javascript?
 
-`Object destructuring` is a feature in JavaScript that allows you to extract properties from an object and assign them
-to individual variables in a concise and convenient way. It provides a shorter syntax for extracting values from objects
+`Object destructuring` is a feature in JavaScript that allows you to `extract properties from an object and assign them
+to individual variables` in a concise and convenient way. It provides a shorter syntax for extracting values from
+objects
 and avoids repetitive object property access.
 Here's an example of object destructuring in JavaScript:
 
@@ -491,10 +539,11 @@ console.log(age); // Output: 30
 console.log(city); // Output: 'New York'
 ```
 
-#### What is array destructuring in javascript?
+#### What is `array destructuring` in javascript?
 
-`Array destructuring` is a feature in JavaScript that allows you to extract elements from an array and assign them to
-individual variables in a concise and convenient way. It provides a shorter syntax for extracting values from arrays and
+`Array destructuring` is a feature in JavaScript that allows you to `extract elements from an array and assign them to
+individual variables` in a concise and convenient way. It provides a shorter syntax for extracting values from arrays
+and
 avoids repetitive array element access.
 Here's an example of array destructuring in JavaScript:
 
@@ -511,7 +560,7 @@ console.log(d); // Output: 4
 console.log(e); // Output: 5
 ```
 
-#### What is the spread operator in `js` ?
+#### What is the `(...)spread operator` in `js` ?
 
 The `spread operator` in JavaScript `('...')` is a syntax that allows you to "spread" elements of an iterable (e.g., an
 array, string, or object) into another iterable or as arguments to a function or method. It provides a concise way to
@@ -523,10 +572,44 @@ expand an iterable into individual elements and use them in various contexts.
   function.
 - `Object spreading`: You can use the spread operator to create a new object by spreading the properties of an existing
   object into a new object.
+-
+
+```js
+function sum(x, y, z) {
+    return x + y + z;
+}
+
+const numbers = [1, 2, 3];
+
+console.log(sum(...numbers));
+// Expected output: 6
+
+console.log(sum.apply(null, numbers));
+// Expected output: 6
+```
 
 #### What are the differences between the `arrow` function and the regular `function`?
 
-Arrow functions are anonymous functions, used for single-use case.
+Arrow function is an anonymous function, which is an alternative to traditional function expression, used for
+single-use case.
+
+```js
+// Traditional anonymous function
+(function (a) {
+    return a + 100;
+});
+
+// 1. Remove the word "function" and place arrow between the argument and opening body brace
+(a) => {
+    return a + 100;
+};
+
+// 2. Remove the body braces and word "return" — the return is implied.
+(a) => a + 100;
+
+// 3. Remove the parameter parentheses
+a => a + 100;
+```
 
 #### What is the `import` keyword used for?
 
@@ -535,25 +618,59 @@ current module, allowing you to organize and modularize your codebase. The 'impo
 with the 'export' statement, which is used to define what functionality is exposed from a module and can be imported by
 other modules.
 
+```js
+import defaultExport from "module-name";
+import * as name from "module-name";
+import {export1} from "module-name";
+import {export1 as alias1} from "module-name";
+import {default as alias} from "module-name";
+import {export1, export2} from "module-name";
+import {export1, export2 as alias2, /* … */} from "module-name";
+import {
+
+"string name"
+as
+alias
+}
+from
+"module-name";
+import defaultExport, {export1, /* … */} from "module-name";
+import defaultExport, * as name from "module-name";
+import "module-name";
+```
+
 #### What is the `required` used for?
 
-The '`require()`' function is typically used to load Node.js built-in modules, third-party libraries, or custom modules
-defined by the developer. When a module is required using the 'require' statement, its code is executed, and the
+The '`require()`' function is typically `used to load Node.js built-in modules`, third-party libraries, or custom
+modules defined by the developer. When a module is required using the 'require' statement, its code is executed, and the
 exported functionality is returned to the importing module, allowing you to use the exported functions, objects, or
 other code in your current module.
 
-#### What are template literals?
+![img_7.png](img_7.png)
+
+#### What are `template literals`?
 
 `Template literals`, also known as template strings, are a feature in JavaScript that allow for more flexible and
 readable string formatting compared to traditional string concatenation methods. Template literals are enclosed in
-backticks (` `) instead of single or double quotes used in regular strings.
-Template literals support embedding expressions inside the string using placeholders, denoted by `${}`. These
+backticks `(` `)` instead of single or double quotes used in regular strings.
+Template literals support embedding expressions inside the string using placeholders, denoted by `${ }`. These
 expressions can be variables, expressions, or even complex JavaScript code, which are evaluated and interpolated into
 the resulting string at runtime.
 
+```js
+`string text`
+
+    `string text line 1
+string text line 2`
+
+    `string text ${expression} string text`
+
+tagFunction`string text ${expression} string text`
+```
+
 ### React basics
 
-#### What benefits does it bring for a developer to use `components` (opposed of writing all the code in a single file) ?
+#### What benefits does it bring for a developer to use `components` (opposed of writing all the code in a single file)?
 
 Using components, as opposed to writing all the code in a single file, brings several benefits for developers:
 
@@ -583,7 +700,7 @@ Using components, as opposed to writing all the code in a single file, brings se
   for specific parts of an application. This helps in identifying and fixing issues early in the development process,
   leading to higher code quality and reliability.
 
-#### What is the difference between Element and Component?
+#### What is the difference between `Element and Component`?
 
 The main difference between an element and a component is the level of abstraction and encapsulation. An `element` is a
 basic building block that defines the structure and content of a web page, while a `component` is a higher-level
@@ -591,7 +708,34 @@ abstraction that encapsulates the behavior and appearance of a specific part of 
 designed to be reusable, modular, and self-contained, with their own logic, state, and presentation, whereas elements
 are the basic HTML tags that make up the structure of a web page.
 
-#### How do you pass values between components in `react`?
+```js
+// ELEMENT:
+import React from 'react';
+import React from 'react';
+import ReactDOM from 'react-dom';
+// Without JSX
+const ele1 = React.createElement(
+    'h1',
+    {id: 'header'},
+    'Hey Geek'
+);
+ReactDOM.render(ele1, document.getElementById('root'));
+
+// COMPONENT:
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+function Welcome(user) {
+    return <div>
+        <h3>Welcome {user.name}</h3>
+    </div>
+}
+
+const ele = <Welcome name="Geek"/>
+ReactDOM.render(ele, document.getElementById("root"));
+```
+
+#### How do you pass values between components in `React`?
 
 In React, there are several ways to pass values (data) between components. Some of the common methods include:
 
@@ -599,8 +743,14 @@ In React, there are several ways to pass values (data) between components. Some 
   can pass data as props when rendering the child component, and the child component can access the passed data through
   its props object. Props are read-only, meaning that the child component cannot modify the values of props directly.
 
+```js
+function Welcome(props) {
+    return <h1>Hello, {props.name}</h1>;
+}
+```
+
 - `State Lifting`: If the components that need to share data are not directly parent and child components in the
-  component tree, you can use a technique called "state lifting". This involves lifting the state (data) to a common
+  component tree, you can use a technique called `state lifting`. This involves lifting the state (data) to a common
   ancestor component and passing it down as props to the child components that need it.
 
 - `Context API`: The Context API in React allows you to share data between components without having to pass it
@@ -620,7 +770,7 @@ In React, there are several ways to pass values (data) between components. Some 
 #### What is `key` prop?
 
 In React, the `'key' prop` is a special attribute that is used to `uniquely identify` child elements in a list rendered
-by a component. It is required when rendering an array of components or elements using the 'map()' function or other
+by a component. It is required when rendering an array of components or elements using the `map()` function or other
 iteration methods. Each item in the list must have a unique 'key' prop to help React efficiently update the UI when the
 list changes.
 
@@ -629,23 +779,27 @@ list is updated, React uses the 'key' prop to determine which items are added, r
 unique 'key' for each item, React can optimize the DOM updates and avoid unnecessary re-rendering of components,
 resulting in better performance.
 
-#### How does a child component pass data to it's parent component ?
+#### How does a child component `pass data` to its parent component ?
 
-In React, data can be passed from child component to parent component through the use of callback functions.
+In React, data can be passed from child component to parent component `through the use of callback functions`.
 
 The parent component can pass a function down to the child component as a prop. The child component can then call this
 function with the data it wants to pass to the parent component. The parent component will receive the data as an
 argument in the function and can then use it as needed.
 
-#### Write the code to create in JSX an HTML DIV element that has the innerText the contents of the variable `let name = 'Andrew'`
+#### Write the code to create in `JSX` an HTML DIV element that has the innerText the contents of the variable
+
+`let name = 'Andrew'`
 
 ```jsx
+let name = 'Andrew';
 <div>{name}</div>
 ```
 
-#### Write the code to create in JSX an unordered list from the array `let names = ["Mathew", "John", "Maverik"]`
+#### Write the code to create in `JSX` an unordered list from the array `let names = ["Mathew", "John", "Maverik"]`
 
-```js
+```jsx
+let names = ["Mathew", "John", "Maverik"];
 <ul>
     {names.map((name) => (
         <li key={name}>{name}</li>
@@ -663,7 +817,7 @@ argument in the function and can then use it as needed.
 
 ### React patterns
 
-#### What is the difference between Real DOM and Virtual DOM?
+#### What is the difference between `Real DOM and Virtual DOM`?
 
 `Real DOM (Document Object Model)` is the actual structure of the web page or application that is created in the memory
 of the browser. When changes are made to the content of a web page or application, the Real DOM has to update its
@@ -673,9 +827,11 @@ structure, and this can be a time-consuming process, especially for complex appl
 representation of the structure of the web page or application in memory, and it can be updated and manipulated more
 quickly than the Real DOM. React is an example of a library that uses Virtual DOM to update the UI efficiently.
 
+![img_8.png](img_8.png)
+
 #### When adding an item to an array, why is it necessary to pass a new array to the `useState` hook ?
 
-When adding an item to an array using the 'useState' hook in React, it is necessary to pass a new array to the hook
+When adding an item to an array using the `useState` hook in React, it is necessary to pass a new array to the hook
 because the state in React is immutable, which means that it cannot be directly modified. Instead, we need to create a
 new state object that includes any changes we want to make.
 
@@ -684,7 +840,7 @@ component will not re-render. This is because React only re-renders when the sta
 called "reconciliation" to compare the previous state and the new state to determine what has changed. By passing a new
 array to the useState hook, we ensure that React recognizes the state change and triggers a re-render of the component.
 
-#### Describe what techniques or tools you use to debug a React app.
+#### Describe what techniques or tools you use to `debug a React app`.
 
 - `Console.log()`: This is a basic debugging technique that involves using console.log() to output values to the console
   to verify if they are what you expect. You can add console.log() statements to your code to help you identify where a
@@ -724,13 +880,13 @@ or implement lifecycle methods.
 
 #### Name 3 lifecycle states in a React `functional` component.
 
-`useEffect`: This hook is used to perform side effects in response to component updates.
+`useEffect`: This hook is used to perform side effects in response to component updates.\
 
-`useState`: This hook is used to manage state in functional components.
+`useState`: This hook is used to manage state in functional components.\
 
 `useContext`: This hook is used to access context in functional components.
 
-#### What is conditional rendering in `react` ? Give an example.
+#### What is conditional rendering in `React` ? Give an example.
 
 `Conditional rendering` is the process of displaying different parts of a React component based on certain conditions.
 It means that the component will render different parts of the UI depending on the state of the application.
@@ -749,7 +905,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-#### Why is there an infinite loop in this code
+#### Why is there an `infinite loop` in this code
 
 ```js
 function App() {
@@ -766,14 +922,14 @@ function App() {
 ```
 
 There is an infinite loop in the code because the useEffect hook is executed on every render of the component, and it
-updates the count state value by incrementing it by 1. Since there is no dependency array provided to useEffect, it runs
-after every render, causing the state update to trigger a re-render, which triggers the useEffect again, leading to an
-infinite loop. To fix this, a dependency array should be provided to useEffect so that it only runs when the specified
-dependencies change.
+updates the count state value by incrementing it by 1. Since there is `no dependency array` provided to useEffect, it
+runs after every render, causing the state update to trigger a re-render, which triggers the useEffect again, leading to
+an infinite loop. To fix this, a dependency array should be provided to useEffect so that it only runs when the
+specified dependencies change.
 
-#### Why is there an infinite loop in this code
+#### Why is there an `infinite loop` in this code
 
-```js
+```jsx
   async function App() {
     const [count, setCount] = useState("");
     setCount(count + 1);
@@ -795,10 +951,12 @@ concatenation instead of addition. Therefore, count + 1 will result in "1" inste
 
 ### Mongo & mongoose
 
-#### What is a database schema ?
+#### What is a `database schema` ?
 
 A `database schema is a structure that defines the organization, format, and constraints of data stored in a database`.
 It specifies the tables, fields, relationships, and rules that govern how data is stored and accessed.
+
+![img_9.png](img_9.png)
 
 #### Why is the `id` unique in a database ?
 
@@ -807,9 +965,9 @@ Uniqueness helps maintain data integrity and enables efficient retrieval, update
 
 #### What are the advantages & disadvantages of using `lean()` function in a mongo query ?
 
-In Mongoose, the lean() function is a method that can be applied to a query to retrieve plain JavaScript objects instead
-of fully-fledged Mongoose documents. By using lean(), the query execution is optimized, resulting in faster performance
-and reduced memory consumption.
+In Mongoose, the `lean()` function is a method that can be applied to a query to retrieve plain JavaScript objects
+instead of fully-fledged Mongoose documents. By using lean(), the query execution is optimized, resulting in faster
+performance and reduced memory consumption.
 Advantage:
 
 - `Improved Performance`: The lean() function retrieves plain JavaScript objects instead of mongoose documents,
@@ -867,13 +1025,13 @@ const employees = await EmployeeModel.updateMany(
 
 `MERN` stands for a collection of technologies:
 
-`MongoDB`: A NoSQL database that `stores data` in JSON-like documents.
-`Express`: A web framework for Node.js that provides a set of tools for `building web applications and APIs`.
-`React`: A JavaScript library for `building user interfaces`.
+`MongoDB`: A NoSQL database that `stores data` in JSON-like documents.\
+`Express`: A web framework for Node.js that provides a set of tools for `building web applications and APIs`.\
+`React`: A JavaScript library for `building user interfaces`.\
 `Node.js`: A JavaScript runtime that `allows running JavaScript code` on the server-side.
 Together, these technologies make up a popular tech stack for building modern web applications.
 
-#### What is routing in the context of a `react` app ?
+#### What is routing in the context of a `React` app ?
 
 `In the context of a react app`, routing refers to the process of defining
 and `managing navigation within the application`. It allows for the creation of different paths or URLs that correspond
