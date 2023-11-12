@@ -4,33 +4,132 @@
 
 #### What are the differences `between objects and arrays`? What is the purpose of the object and what is the purpose of the array?
 
-`Arrays` store a list of values, whereas `objects` store key - value pairs. They are both special data types and also
-they are both mutable.
+`Arrays` are ordered collection of values, they store a list of values, whereas `objects` store key - value pairs. They
+are both special data types and also they are both mutable.
+
+```js
+// ARRAY:
+// Creating an array of numbers
+const numbers = [1, 2, 3, 4, 5];
+// Accessing elements in an array
+console.log(numbers[0]); // 1
+console.log(numbers[2]); // 3
+// Iterating through an array
+numbers.forEach((number) => {
+    console.log(number);
+});
+// Modifying an array
+numbers.push(6); // Adds 6 to the end of the array
+numbers.pop(); // Removes the last element (5)
+// Finding the length of an array
+console.log(numbers.length); // 5
+```
+
+```js
+// OBJECT:
+// Creating an object to represent a person
+const person = {
+    name: "John Doe",
+    age: 30,
+    address: "123 Main St",
+};
+// Accessing properties in an object
+console.log(person.name); // "John Doe"
+console.log(person.age); // 30
+// Adding new properties to an object
+person.email = "john@example.com";
+// Iterating through an object's properties
+for (const key in person) {
+    console.log(key, person[key]);
+}
+// Modifying an object's properties
+person.age = 31;
+// Deleting a property from an object
+delete person.address;
+// Checking if a property exists in an object
+console.log("email" in person); // true
+console.log("address" in person); // false
+```
 
 #### How can you access a `key's value` in an object?
 
-You can use the `.(dot) or bracket [] notation`. So `cars.volvo` or `cars[volvo]`.
+You can use the `.(dot)` or `bracket [] notation`. So `cars.volvo` or `cars[volvo]`.
+
+```js
+const person = {
+    name: "John",
+    age: 30,
+};
+// Accessing values using dot notation
+const name = person.name;
+const age = person.age;
+console.log(name); // "John"
+console.log(age); // 30
+```
+
+```js
+const person = {
+    "full name": "John Doe",
+    "address 1": "123 Main St",
+};
+// Accessing values using square bracket notation
+const fullName = person["full name"];
+const address = person["address 1"];
+console.log(fullName); // "John Doe"
+console.log(address); // "123 Main St"
+```
 
 #### How can you access the `first and the last item` of an array?
 
-The first: array[0]
-The last:  array[array.length - 1]
+```js
+const myArray = [1, 2, 3, 4, 5];
+
+// Accessing the first item
+const firstItem = myArray[0];
+console.log(firstItem); // 1
+
+// Accessing the last item
+const lastItem = myArray[myArray.length - 1];
+console.log(lastItem); // 5
+```
 
 #### Name all the `primitive types` in JavaScript.
 
+In JavaScript, a `primitive` (primitive value, primitive data type) is data that is not an object and has no methods or
+properties. All primitives are immutable. Primitive types copied by value, reference types by reference (memory
+address). There are 7 primitive data types:
+
 String / Number / Bigint / Boolean / Undefined / Symbol / Null
+
+![img_10.png](img_10.png)
 
 ## Algorithm basics
 
 #### What are the `assignment operators`? Name some of them.
 
+Assignment operators in JavaScript are used to assign values to variables. They perform the assignment while also
+allowing for various operations to be combined with the assignment.
+
 | = | += | -= | *= | /= | %= | **=
 
+```js
+let x = 10; // Assigns the value 10 to variable x
+let y = 5;
+y += 3; // Equivalent to y = y + 3
+let z = 10;
+z -= 4; // Equivalent to z = z - 4
+```
+
 #### What are the `arithmetic operators`? Name some of them.
+
+Arithmetic operators in JavaScript are used to perform various mathematical calculations on numerical values.
 
 | + | - | * | / | ++ (increment)| -- (decrement)| % | - (unary negation) | + (unary plus)
 
 #### What are the `comparison operators`? Name some of them.
+
+Comparison operators in JavaScript are used to compare values and return a Boolean result indicating whether the
+comparison is true or false.
 
 | < | > | >= | <= | === | !==
 
@@ -55,16 +154,18 @@ A: I add the values using a loop and divide the result by the length of the arra
 
 #### What are the main `parts of a function`?
 
-The function keyword
-Name (if not anonymous)
-A list of parameters in ()
-A statement in {}
-The calling part of the function
+The `function` keyword\
+`Name` (if not anonymous)\
+A list of `parameters in ()`\
+A `statement in {}`\
+The `calling` part of the function
 
 ```js
 function name(parameter1, parameter2, parameter3) {
-// code to be executed
+    // code to be executed
 }
+
+name(argument1, argument2, argument3);
 ```
 
 #### What is the difference between `parameters` and `arguments`?
@@ -72,43 +173,78 @@ function name(parameter1, parameter2, parameter3) {
 Parameters are listed in the definition of a function whereas arguments are the actual values given to the function for
 it to make transformation on.
 
-#### What are the differences between `function statement (declaration)` (function foo() {}) and `function expression` (let foo = function () {})?
+#### What are the differences between `function statement (declaration)` (function foo() {}) and `function expression`(let foo = function () {})?
 
 `Function statement` is the definition of a function. It loads before any code is executed (hoisting). Function
 keyword (so functions) are hoisting!
 You CAN call before it is defined.
 
+```js
+// Function statement
+function sum(a, b) {
+    return a + b;
+}
+
+// You can call the function before its declaration
+var result = sum(5, 3);
+console.log(result); // Output: 8
+```
+
 A `function expression` associates a value with a variable, just like any other assignment statement. Function
 expressions load only when the interpreter reaches the definition of the function. Because `let` and `const` are not
 hoisting!
 You MUST define before calling.
-let foo = function() {
+
+```js
+// Function expression
+var product = function (x, y) {
+    return x * y;
 };
+
+// You must call the function after its declaration
+var result = product(4, 7);
+console.log(result); // Output: 28
+```
 
 ## OOP Basics
 
 #### What is a `method`?
 
-A method in JavaScript is a function that is associated with an object. It is used to perform a specific action on the
+A method in JavaScript is a function that is `associated with an object`. It is used to perform a specific action on the
 object it is called upon.
+
+```js
+// Object definition
+var person = {
+    firstName: "John",
+    lastName: "Doe",
+    fullName: function () {
+        return this.firstName + " " + this.lastName;
+    }
+};
+// Accessing a property
+console.log(person.firstName); // Output: John
+// Calling a method
+console.log(person.fullName()); // Output: John Doe
+```
 
 #### Name `3 built-in functions` (and/or methods) regarding `strings`.
 
-1. replace(), replaceAll(),
-2. toUpperCase() / toLowerCase()
-3. split()
+1. String.prototype.replace(), .replaceAll();
+2. .toUpperCase() / .toLowerCase();
+3. .split();
 
 #### Name `3 built-in functions` (and/or methods) regarding `arrays`.
 
-1. join()
-2. concat()
-3. push()
+1. Array.prototype.join();
+2. .concat();
+3. .push();
 
 #### Name `3 built-in functions` (and/or methods) regarding `numbers`.
 
-1. toString()
-2. Number()
-3. Date()
+1. .toString();
+2. Number();
+3. Date();
 
 ## FP Basics
 
@@ -120,11 +256,11 @@ allowing the main execution of code to continue while the callback function is e
 
 ```js
 function myFirst() {
-  myDisplayer("Hello");
+    myDisplayer("Hello");
 }
 
 function mySecond() {
-  myDisplayer("Goodbye");
+    myDisplayer("Goodbye");
 }
 
 myFirst();
@@ -133,12 +269,34 @@ mySecond();
 
 #### What are the differences between `for` loops and `forEach`?
 
-`Syntax`: `for loops` have a more complex syntax, which allows for more control over the iteration, including the use of
-a counter and the ability to exit (to `break`) the loop early. `forEach` (methods) loops have a simpler syntax and do
+```js
+// FOR LOOP:
+const array = [1, 2, 3, 4, 5];
+
+for (let i = 0; i < array.length; i++) {
+    console.log(array[i]);
+}
+```
+
+```js
+// FOR EACH METHOD (HOF):
+const array = [1, 2, 3, 4, 5];
+
+array.forEach(function (element) {
+    console.log(element);
+});
+```
+
+`Syntax`:\
+`for loops`: have a more complex syntax, which allows for more control over the iteration, including the use of
+a counter and the ability to exit (to `break`) the loop early.\
+`forEach`: (methods) loops have a simpler syntax and do
 not have a counter or the ability to exit early.
 
-`Scope`: `for loops` have their own block scope, which means variables declared inside the loop are only accessible
-within the loop. `forEach` loops do not have their own block scope and variables declared inside the loop are accessible
+`Scope`:\
+`for loops`: have their own block scope, which means variables declared inside the loop are only accessible
+within the loop.\
+`forEach`: loops do not have their own block scope and variables declared inside the loop are accessible
 outside the loop.
 
 `return statement`: The return statement inside a forEach loop only breaks out of the current iteration, not the entire
@@ -176,14 +334,25 @@ structures are better suited for data storage and manipulation within a JavaScri
 #### How do you create JavaScript data structure from a JSON file's data?
 
 ```js
+const fs = require('fs');
 const data = fs.readFileSync('/Users/joe/test.txt', 'utf8');
-// OR Callback Function:
+// Step 1: Read the JSON file
 fs.readFile('test.txt', 'utf8', (err, data) => {
-if (err) {
-console.error(err);
-return;
-}
-console.log(data);
+    if (err) {
+        console.error(err);
+        return;
+    }
+    // Step 2: Parse JSON data
+    try {
+        const jsonData = JSON.parse(data);
+        // Step 3: Use the data to create JavaScript data structures
+        const name = jsonData.name;
+        const age = jsonData.age;
+        console.log('Name:', name);
+        console.log('Age:', age);
+    } catch (parseError) {
+        console.error('Error parsing JSON:', parseError);
+    }
 });
 ```
 
@@ -192,10 +361,9 @@ console.log(data);
 #### What is the difference between JavaScript data structures and `DOM` (HTML document) data structures?
 
 `JavaScript data structures` (e.g. arrays, objects, sets, maps) are used to `store and manipulate` data within a
-JavaScript program,
-while `DOM (Document Object Model) data structures` `represent the structure and content of an HTML document` as a
-tree-like structure, with each element in the document represented as an object with properties and methods. JavaScript
-can access and manipulate the DOM data structure to change the appearance and behavior of a webpage.
+JavaScript program, while `DOM (Document Object Model) data structures` `represent the structure and content of an HTML
+document` as a tree-like structure, with each element in the document represented as an object with properties and
+methods. JavaScript can access and manipulate the DOM data structure to change the appearance and behavior of a webpage.
 
 #### What are the `steps of changing a HTML element's content` with JavaScript?
 
@@ -301,6 +469,7 @@ Use the classList property of the element to access its classes.
 Use the remove method of the `classList` property to `remove` a class name from the element.
 
 For example:
+
 ```js
 const element = document.getElementById("my-element");
 // Add class
@@ -378,6 +547,7 @@ Examples in JavaScript:
 
 `Passed by value`: numbers (e.g. 1, 3.14), strings (e.g. "hello", 'world'), booleans (e.g. true, false), symbols (e.g.
 Symbol()).
+
 ```js
 let x = 1;
 let y = x;
@@ -388,6 +558,7 @@ console.log(y); // 2
 ```
 
 `Passed by reference`: objects (e.g. {}, new Object()), arrays (e.g. [], new Array()).
+
 ```js
 let a = [1, 2, 3];
 let b = a;

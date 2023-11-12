@@ -95,6 +95,10 @@ greeter = "say Hello instead";
 console.log(greeter); // Expected: 'TypeError: Assignment to constant variable'
 ```
 
+Hoisting in `Function Statement` and `Function Expression`:
+
+![img_11.png](img_11.png)
+
 #### Write an example where using the `var` declaration instead of the `let` could create a hard to debug code.
 
 ```js
@@ -260,8 +264,9 @@ scheme://host:port/path?query
 ```
 
 > ![img.png](img.png)
+> ![img_12.png](img_12.png)
 
-#### What is query parameter?
+#### What is `query parameter`?
 
 `Query parameters (query strings)` are a `defined set of parameters attached to the end of a url`. Query parameters are
 elements inserted in your URLs to help you filter and organize content or track information on your website. They are
@@ -269,7 +274,7 @@ extensions of the URL that are used to help define specific content or actions b
 query params to the end of a URL, a `'?'` Is added followed immediately by a query parameter.
 ![img_1.png](img_1.png)
 
-#### What kind of HTTP status codes do you know?
+#### What kind of `HTTP status codes` do you know?
 
 1. Informational responses (100 – 199): \
    `100 Continue`
