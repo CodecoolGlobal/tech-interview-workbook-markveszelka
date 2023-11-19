@@ -70,8 +70,8 @@ Queue implementations are LinkedList, ArrayBlockingQueue and PriorityQueue.
 `ArrayList` is efficient for random access, retrieval by index, and overall faster iteration, while `LinkedList` is
 more efficient for frequent insertions and deletions. The choice between them depends on the specific requirements of
 your application, such as the type of operations performed, the size of the list, and the access patterns.
-`ARRAYLIST`: ![img.png](img.png)
-`LINKEDLIST`: ![img_1.png](img_1.png)
+`ARRAYLIST`: ![img.png](../web/img.png)
+`LINKEDLIST`: ![img_1.png](../web/img_1.png)
 
 #### Are sets sorted in Java?
 

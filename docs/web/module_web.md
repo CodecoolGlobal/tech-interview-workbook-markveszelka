@@ -191,6 +191,8 @@ The `client-server architecture` refers to a system that hosts, delivers, and ma
 that the client requests. In this model, all requests and services are delivered over a network, and it is also referred
 to as the networking computing model or client-server network.
 
+![img_10.png](img_10.png)
+
 #### What is the difference between `synchronous` and `asynchronous` execution?
 
 `Synchronous` execution means the first task in a program `must finish processing before moving on` to executing the
@@ -290,7 +292,7 @@ query params to the end of a URL, a `'?'` Is added followed immediately by a que
    `500 Internal Server Error`:
    The server has encountered a situation it does not know how to handle.
 
-#### How does an HTTP Request look like? What are the most relevant HTTP header fields?
+#### How does an `HTTP Request` look like? What are the most relevant HTTP header fields?
 
 - `Request line`: This specifies the HTTP method (e.g. GET, POST, PUT, DELETE) and the URL being requested.
 - `Headers`: These provide additional information about the request, such as the content type, cookies, and caching
@@ -299,7 +301,7 @@ query params to the end of a URL, a `'?'` Is added followed immediately by a que
 
 ![img_2.png](img_2.png)
 
-#### How does an HTTP Response look like? What are the most relevant HTTP header fields?
+#### How does an `HTTP Response` look like? What are the most relevant HTTP header fields?
 
 - `Status line`: This specifies the HTTP status code (e.g. 200 OK, 404 Not Found) and a brief message describing the
   status.
@@ -307,12 +309,13 @@ query params to the end of a URL, a `'?'` Is added followed immediately by a que
   directives.
 - `Body`: This contains the data being returned by the server, such as HTML, JSON, or an image
 
+![img_13.png](img_13.png)
+
 #### Why should you ignore the `node_modules` folder in `.gitignore`?
 
-The node_modules folder contains all the saved JavaScript dependencies of a project. The `node_modules folder has a
-massive size (up to Gigabytes)`.
-It is easy to recreate the node_modules folder via packages.json. It is unnecessary to commit code that you didn't
-write (in most cases).
+The `node_modules folder` contains all the saved JavaScript dependencies of a project. The `node_modules folder has a
+massive size (up to Gigabytes)`. It is easy to recreate the node_modules folder via `packages.json`. It is unnecessary
+to commit code that you didn't write (in most cases).
 
 ### Rest API: Serve and Fetch
 
@@ -373,6 +376,9 @@ to be used when creating web services. A RESTful API is an API that adheres to t
 app) `interacts with a server` (a web service or a backend application) to request and manipulate resources. Resources
 are identified by `URIs (Uniform Resource Identifiers)`, and clients can perform operations on these resources using
 standard `HTTP methods, such as 'GET', 'POST', 'PUT', 'DELETE'`, etc.
+
+`Stateless`: In REST applications, each request must contain all the information necessary to be understood by the
+server, rather than be dependent on the server remembering prior requests. All state info should be kept on client side.
 
 ![img_3.png](img_3.png)
 
@@ -435,11 +441,19 @@ console.log(getFee(null));
 
 #### How to `import a function from another module` in JavaScript?
 
-In JavaScript, you can use the 'import' statement to import a function or other entities (such as objects, classes, or
-variables) from another module. Here's the basic syntax for importing a function from another module:
+In JavaScript, you can use the `'import' statement` to import a function or other entities (such as objects, classes,
+or variables) from another module. Here's the basic syntax for importing a function from another module:
 
 ```js
+// Another file:
 import {functionName} from './modulePath';
+// Now you can use the imported function
+functionName(); // This will log 'This function is exported.'
+
+// modulePath.js:
+export function functionName() {
+    console.log('This function is exported.');
+}
 ```
 
 #### What is a `shallow copy` on an object?
@@ -460,7 +474,7 @@ const ingredientsListCopy = Array.from(ingredientsList);
 console.log(ingredientsListCopy);
 // ["noodles",{"list":["eggs","flour","water"]}]
 
-// DEEP COPY With structureClone()
+// DEEP COPY With structuredClone()
 // Create an object with a value and a circular reference to itself.
 const original = {name: "MDN"};
 original.itself = original;
@@ -477,7 +491,7 @@ console.assert(clone.itself === clone); // and the circular reference is preserv
 
 Higher-Order Functions(HoF) and Callback Functions(CB) are different.\
 `Higher-Order Functions(HoF)`: A function that takes another function(s) as an argument(s) and/or returns a function as
-a value.\
+a value.
 
 ![img_6.png](img_6.png)
 
@@ -490,7 +504,7 @@ a value.\
   continue executing other tasks in the meantime.
 
 ```js
-  setTimeout(function () {
+setTimeout(function () {
     console.log("This is a callback function called after 1 second.");
 }, 1000);
   ```
@@ -500,7 +514,7 @@ a value.\
   button clicks, mouse movements, and keyboard events.
 
 ```js
-  document.getElementById("myButton").addEventListener("click", function () {
+document.getElementById("myButton").addEventListener("click", function () {
     console.log("Button clicked!");
 });
 ```
@@ -510,7 +524,8 @@ a value.\
   argument to the callback is reserved for an error object, allowing error handling in asynchronous operations.
 
 ```js
-  fs.readFile('file.txt', 'utf8', function (err, data) {
+const fs = require('fs');
+fs.readFile('file.txt', 'utf8', function (err, data) {
     if (err) {
         console.error('Error reading file:', err);
     } else {
@@ -565,7 +580,7 @@ console.log(d); // Output: 4
 console.log(e); // Output: 5
 ```
 
-#### What is the `(...)spread operator` in `js` ?
+#### What is the `(...) spread operator` in `js` ?
 
 The `spread operator` in JavaScript `('...')` is a syntax that allows you to "spread" elements of an iterable (e.g., an
 array, string, or object) into another iterable or as arguments to a function or method. It provides a concise way to
@@ -577,7 +592,6 @@ expand an iterable into individual elements and use them in various contexts.
   function.
 - `Object spreading`: You can use the spread operator to create a new object by spreading the properties of an existing
   object into a new object.
--
 
 ```js
 function sum(x, y, z) {
@@ -593,10 +607,47 @@ console.log(sum.apply(null, numbers));
 // Expected output: 6
 ```
 
+```js
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const combinedArray = [...arr1, ...arr2];
+
+console.log(combinedArray); // Output: [1, 2, 3, 4, 5, 6]
+```
+
+```js
+const str = 'hello';
+const charArray = [...str];
+
+console.log(charArray); // Output: ['h', 'e', 'l', 'l', 'o']
+```
+
+```js
+function sum(...numbers) {
+    return numbers.reduce((total, num) => total + num, 0);
+}
+
+console.log(sum(1, 2, 3, 4, 5)); // Output: 15
+```
+
 #### What are the differences between the `arrow` function and the regular `function`?
 
 Arrow function is an anonymous function, which is an alternative to traditional function expression, used for
 single-use case.
+
+- `Syntax`:
+Regular function syntax: function functionName(parameters) { ... }\
+Arrow function syntax: (parameters) => { ... }
+- `Arguments object`:
+Regular functions have an arguments object that provides access to the arguments passed to the function, even if they
+were not explicitly declared as parameters.
+Arrow functions do not have their own arguments object. If you need access to the arguments, you can use the rest
+parameters syntax (...args) to capture them explicitly.
+- `Implicit return`:
+Arrow functions have an implicit return feature. If the function body consists of a single expression, you can omit the
+curly braces and the return keyword. The result of the expression will be implicitly returned.
+Regular functions require an explicit return statement to return a value. If no return statement is provided, the
+function will return undefined.
 
 ```js
 // Traditional anonymous function
