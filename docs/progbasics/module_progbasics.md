@@ -480,7 +480,47 @@ element.classList.remove("new-class");
 
 ## JavaScript - language specialties
 
-#### What is the difference between value and reference data types in terms of object and primitives?
+#### What is the difference between `value and reference data types` in terms of object and primitives?
+
+The difference is how they are stored and passed around in memory.
+
+`Primitives (Value Types):`\
+
+- `Stored by Value`:
+Primitive data types (strings, numbers, booleans, null, and undefined) are stored directly in the variable (stored in
+memory as a value). When you assign a primitive to a variable or pass it as a function argument, a copy of the actual
+value is made.
+
+- `Immutable`:
+Primitives are immutable, meaning their values cannot be changed. If you assign a new value to a variable, it creates a
+new space in memory for that value.
+
+```js
+let num1 = 5;
+let num2 = num1; // num2 is a copy of num1
+num1 = 10;       // num2 remains 5
+```
+
+`Objects (Reference Types)`:
+Reference data types, including objects and arrays, are stored in memory as a reference to a location in memory where
+the actual value is stored. When you assign a reference data type to a variable, the variable does not contain the
+actual value, but rather a reference to the location in memory where the value is stored.
+
+- `Stored by Reference`:
+Objects (including arrays and functions) are reference types. When you assign an object to a variable or pass it as a
+function argument, you are actually working with a reference to the object in memory.
+
+- `Mutable`:
+Objects are mutable, meaning their contents can be changed. If you modify the object, all references to that object will
+see the changes.
+
+```js
+let obj1 = { name: 'John' };
+let obj2 = obj1; // obj2 references the same object as obj1
+obj1.name = 'Jane'; // Both obj1 and obj2 now have name: 'Jane'
+```
+
+Primitive data types are passed by value, while reference data types are passed by reference.
 
 Whenever you create a variable in JavaScript, that variable can store one of two types of data, a `primitive value` or
 a `reference value`. If the value is a number, string, boolean, undefined, null, or symbol, it's a primitive value. If
