@@ -200,6 +200,10 @@ next task whereas \
 `Asynchronous` execution means a second task can begin executing `in parallel`, without waiting for an earlier task to
 finish.
 
+<div style="text-align:center;">
+<img src="/docs/web/1698625303361.gif" data-origin="1698625303361.gif" alt="1698625303361.gif" style="width:40%;">
+</div>
+
 #### What is `npm`? Why is it useful?
 
 `NPM (Node Package Manager)` is a package manager for the Node JavaScript platform. It consists of a npm registry that
@@ -291,6 +295,10 @@ query params to the end of a URL, a `'?'` Is added followed immediately by a que
 5. Server error responses (500 – 599): \
    `500 Internal Server Error`:
    The server has encountered a situation it does not know how to handle.
+
+<div style="text-align:center;">
+<img src="/docs/web/1697151065759.gif" data-origin="1697151065759.gif" alt="1697151065759.gif" style="width:40%;">
+</div>
 
 #### How does an `HTTP Request` look like? What are the most relevant HTTP header fields?
 

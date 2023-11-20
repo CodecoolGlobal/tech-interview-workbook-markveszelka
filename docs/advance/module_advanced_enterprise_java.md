@@ -49,12 +49,15 @@ Spring Boot:
 - is a perfect choice if you want to avoid XML configurations
 - has default setup for unit and integration tests
 
-#### What is the major difference between the `Java Standard Edition (JSE) and Java Enterprise Edition (JEE)`? You can choose Spring (Spring Boot) instead of JavaEE. Focus on comparing them.
+### What is the major difference between the `Java Standard Edition (JSE)` and `Java Enterprise Edition (JEE)`?  <br/> You can choose `Spring (Spring Boot)` instead of JavaEE. Focus on comparing them.
 
-Java Standard Edition (JSE) is the core Java programming platform, providing APIs for basic functionalities. Java
-Enterprise Edition (JavaEE), or alternatively Spring, extends JSE by providing APIs and frameworks, catering to the
-needs of enterprise-scale applications. Spring Boot further simplifies Spring application development, reducing the need
-for extensive configuration and setup.
+- `Java Standard Edition (JSE)` is the core Java programming platform, providing APIs for basic functionalities.
+- `Java Enterprise Edition (JavaEE)`, or alternatively Spring, extends JSE by providing APIs and frameworks, catering
+  to the needs of enterprise-scale applications.
+- `Spring Boot`: further simplifies Spring application development, reducing the need
+  for extensive configuration and setup.
+
+![img_2.png](img_2.png)
 
 #### What are the `advantages of the Spring Framework` ? Focus on the Core part.
 
@@ -315,21 +318,26 @@ databases, due to the differing ways they represent data and relationships.
 #### What is a `JpaRepository` ? What are the 2 main methods to define queries in them?
 
 JpaRepository is a JPA specific extension of Repository in Spring Data, providing functionalities like CRUD operations,
-pagination, and sorting. Developers can define `queries using method names` or `@Query annotations`, allowing for concise
+pagination, and sorting. Developers can define `queries using method names` or `@Query annotations`, allowing for
+concise
 and expressive data access code.
 
 1. `Query Methods`:
+
 ```java
 public interface UserRepository extends JpaRepository<User, Long> {
     List<User> findByFirstName(String firstName);
+
     List<User> findByLastNameAndAge(String lastName, int age);
 }
 ```
 
 2. `@Query Annotation`:
+
 ```java
 public interface UserRepository extends JpaRepository<User, Long> {
-    @Query("SELECT u FROM User u WHERE u.email = :email") // using JPQL query in this method
+    @Query("SELECT u FROM User u WHERE u.email = :email")
+        // using JPQL query in this method
     User findByEmail(@Param("email") String email);
 }
 ```

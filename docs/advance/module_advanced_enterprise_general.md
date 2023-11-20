@@ -4,77 +4,99 @@
 
 ### Architectures
 
-#### What is n-tier (or multi-tier) architecture?
+#### What is `n-tier (or multi-tier)` architecture?
 
 N-tier architecture is a layered architecture where components are separated based on their responsibilities. Each layer
 communicates with its adjacent layer and has its own set of responsibilities. Typical layers include Presentation,
 Business Logic, and Data Access layers.
 
-#### What are microservices? Advantages and disadvantages?
+`Layers:`
 
-Microservices is an architectural style that structures an application as a collection of loosely coupled services. Each
-service is independently deployable and scalable.
+- View Layer (UI Layer)
+- Service Layer
+- Business Logic Layer
+- Data Access Layer (Persistence Layer)
 
--Advantages:
-Scalability: Easy to scale individual components.
-Maintainability: Because of smaller codebase and scope.
-Flexibility: Use of different technologies and languages.
+<div style="text-align:center;">
+<img src="/docs/advance/1699655015511.gif" data-origin="1699655015511.gif" alt="1699655015511.gif" style="width:50%;">
+</div>
 
--Disadvantages:
-Complexity: More moving parts mean more complexity.
-Data Integrity: Requires careful management of data between services.
-Network Overhead: Due to inter service communication.
+#### What are `microservices`? Advantages and disadvantages?
 
-#### What is Separation of Concerns?
+Microservices is an architectural style that structures an application as a collection of loosely coupled services.
+Each service is independently deployable and scalable.
 
-Separation of Concerns is a design principle where each module or class in a system should have responsibility over a
+- `Advantages`:
+    - Scalability: Easy to scale individual components.
+    - Maintainability: Because of smaller codebase and scope.
+    - Flexibility: Use of different technologies and languages.
+
+- `Disadvantages`:
+    - Complexity: More moving parts mean more complexity.
+    - Data Integrity: Requires careful management of data between services.
+    - Network Overhead: Due to inter service communication.
+
+<div style="text-align:center;">
+<img src="/docs/advance/img_6.png" data-origin="img6.png" alt="img6.png" style="width:50%;">
+</div>
+
+#### What is `Separation of Concerns`?
+
+`Separation of Concerns is a design principle` where each module or class in a system should have responsibility over a
 single part of the functionality. This results in a system that is easier to manage, test, and extend.
 
-#### What is a layered design and why is it important in enterprise applications?
+`Separation of concerns is a principle` used in programming to separate an application into units, with minimal
+overlapping between the functions of the individual units. The separation of concerns is achieved using modularization,
+encapsulation and arrangement in software layers.
 
-Layered design refers to organizing code in a way that separates concerns, usually into presentation, business logic,
-and data access layers. It is crucial in enterprise applications to manage complexity, facilitate maintenance, and allow
-for scalability.
+![img_9.png](img_9.png)
 
-#### What is Dependency Injection?
+#### What is a `layered design` and why is it important in enterprise applications?
+
+Layered design refers to organizing code in a way that separates concerns, usually
+into `presentation`, `business logic`, and `data access layers`. It is crucial in enterprise applications to manage 
+complexity, facilitate maintenance, and allow for scalability.
+
+#### What is `Dependency Injection`?
 
 Dependency Injection is a design pattern where an object’s dependencies are injected by an external entity, promoting
 loose coupling and enhancing testability and maintainability.
 
-#### What is the DAO pattern? When and how to implement?
+#### What is the `DAO pattern`? When and how to implement?
 
-DAO (Data Access Object) pattern abstracts and encapsulates all access to the data source. Use DAO to separate low-level
-data accessing operations from high-level business services. Implement when you want to decouple business logic from
-data access logic.
+`DAO (Data Access Object) pattern` abstracts and encapsulates all access to the data source. Use DAO to separate 
+low-level data accessing operations from high-level business services. Implement when you want to decouple business 
+logic from data access logic.
 
-#### What is SOA? When to use?
+#### What is `SOA`? When to use?
 
-SOA (Service-Oriented Architecture) is a style where services are provided to the other components via protocol
+`SOA (Service-Oriented Architecture)` is a style where services are provided to the other components via protocol
 requests. Use SOA when building scalable, maintainable, and reusable systems, particularly when integrating diverse
 systems.
 
 ### Testing
 
-#### What are unit test, integration test, system test, regression test, acceptance test? What is the major difference between these?
+#### What are `unit test, integration test, system test, regression test, acceptance test`? What is the major difference between these?
 
--Unit Test: Tests individual units/components of a system.
--Integration Test: Tests the combination of individual units.
--System Test: Tests the complete system as a whole.
--Regression Test: Ensures that new changes haven't broken existing functionality.
--Acceptance Test: Validates that the system meets the specified requirements.
-The major difference is the scope and the level at which they operate within the application’s architecture.
+- `Unit Test`: Tests individual units/components of a system.
+- `Integration Test`: Tests the combination of individual units.
+- `System Test`: Tests the complete system as a whole.
+- `Regression Test`: Ensures that new changes haven't broken existing functionality.
+- `Acceptance Test`: Validates that the system meets the specified requirements.
 
-#### What is code coverage? Why is it used? How you can measure?
+The major difference is the `scope and the level` at which they operate within the application’s architecture.
+
+#### What is `code coverage`? Why is it used? How you can measure?
 
 Code coverage is a metric that indicates the percentage of code executed during testing. It is used to ensure that the
 tests adequately cover the codebase. Measurement tools include coverage.py for Python and JaCoCo for Java.
 
-#### What does mocking mean? How would you do it 'manually' (i.e. without using any fancy framework)?
+#### What does `mocking` mean? How would you do it 'manually' (i.e. without using any fancy framework)?
 
 Mocking involves creating objects that simulate the behavior of real objects. Manually, you could create a class with
 the same interface as the real object but only implement the methods needed for the test, returning fixed values.
 
-#### What is a test case? What is an assertion? Give examples!
+#### What is a `test case`? What is an `assertion`? Give examples!
 
 A test case is a set of conditions or variables used to determine if a system under test works correctly. An assertion
 is a statement that checks if a condition is true.
@@ -84,32 +106,64 @@ Copy code
 def test_addition():
 assert add(2, 3) == 5 # `assert` is the assertion here
 
-#### What is TDD? What are the benefits?
+```java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-Test-Driven Development (TDD) is a methodology where tests are written before the code. Benefits include cleaner code,
+public class MathUtilsTest {
+
+    @Test
+    public void testAddition() {
+        MathUtils mathUtils = new MathUtils();
+        int result = mathUtils.add(5, 3);
+        // Assertion to check if the result is equal to the expected value
+        assertEquals(8, result, "The addition result is incorrect");
+    }
+
+    @Test
+    public void testDivision() {
+        MathUtils mathUtils = new MathUtils();
+        double result = mathUtils.divide(10, 2);
+        // Assertion to check if the result is within a delta of 0.0001 to the expected value
+        assertEquals(5.0, result, 0.0001, "The division result is incorrect");
+    }
+
+    @Test
+    public void testArrayEquality() {
+        int[] array1 = {1, 2, 3};
+        int[] array2 = {1, 2, 3};
+        // Assertion to check if two arrays are equal
+        assertArrayEquals(array1, array2, "Arrays are not equal");
+    }
+}
+```
+
+#### What is `TDD`? What are the benefits?
+
+`Test-Driven Development (TDD)` is a methodology where tests are written before the code. Benefits include cleaner code,
 easier maintenance, and reduction in the number of bugs.
 
-#### What are the unit testing best practices? (e.g. how many assertion should a test case contain?)
+#### What are the `unit testing best practices`? (e.g. how many assertion should a test case contain?)
 
--Write tests for all critical paths.
--Keep them fast.
--One logical assert per test.
--Test only one code unit at a time.
--Name tests clearly and consistently.
+- Write tests for all critical paths.
+- Keep them fast.
+- One logical assert per test.
+- Test only one code unit at a time.
+- Name tests clearly and consistently.
 
-#### What is arrange/act/assert pattern?
+#### What is `arrange / act / assert` pattern?
 
-Arrange/Act/Assert is a pattern used in writing tests:
+`Arrange / Act / Assert` is a pattern used in writing tests:
 
--Arrange: Set up the objects and data.
--Act: Perform the action to test.
--Assert: Verify the action’s result.
+- `Arrange`: Set up the objects and data.
+- `Act`: Perform the action to test.
+- `Assert`: Verify the action’s result.
 
 ### DevOps
 
-#### What is continuous integration? Why is CI important?
+#### What is `continuous integration`? Why is `CI` important?
 
-Continuous Integration (CI) is the practice of merging all developer working copies to a shared mainline several times a
+`Continuous Integration (CI)` is the practice of merging all developer working copies to a shared mainline several times a
 day. CI is crucial to detect errors quickly and ensure that the mainline is always in a state ready for deployment.
 
 #### Why are tests important in the CI workflow?
