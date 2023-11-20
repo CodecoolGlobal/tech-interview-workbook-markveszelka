@@ -42,7 +42,7 @@ Spring Boot is a project that simplifies the development of applications based o
 making it easier to build stand-alone, production-grade Spring-based applications. The main goal of Spring Boot is to
 reduce development time and difficulty of configurations.
 
-Spring Boot:
+`Spring Boot`:
 
 - is a lightweight framework
 - is easy to get started quickly with
@@ -103,13 +103,12 @@ generally `used in combination with Thymeleaf` or JSPs.
 The @RestController annotation is a combination of the @Controller and @ResponseBody annotations and you can use it to
 implement REST APIs in Java and Spring Boot.
 
-The key difference between `@Controller` and `@RestController` annotation is the `@ResponseBody` annotation, @Controller
-does not automatically add the @ResponseBody annotation to all the controller’s methods, which means that you need to
-add it to each method individually if you want to return a JSON or XML response.@RestController automatically adds the
-@ResponseBody annotation to all the controller’s methods.
+The key difference between `@Controller` and `@RestController` annotation is the `@ResponseBody`
+annotation, `@Controller`does not automatically add the @ResponseBody annotation to all the controller’s methods, 
+which means that you need to add it to each method individually if you want to return a JSON or XML response. 
+`@RestController` automatically adds the `@ResponseBody` annotation to all the controller’s methods.
 
 ```java
-
 @Controller
 public class MyController {
 
@@ -125,7 +124,6 @@ public class MyController {
 ```
 
 ```java
-
 @RestController
 public class MyRestController {
 

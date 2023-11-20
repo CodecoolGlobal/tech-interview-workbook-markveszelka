@@ -51,41 +51,76 @@ The `Map` interface is a fundamental interface in the `Java Collections Framewor
 `keys and values`. It provides methods to manipulate and retrieve values based on their associated keys. Unlike the
 `Collection` interface, which deals with individual elements, the `'Map' interface works with key-value pairs`.
 
-#### Compare sets, lists, and queues in Java.
+#### Compare `sets`, `lists`, and `queues` in Java.
 
-`Set` in Java is an interface declared in java.util package. It extends the `Collection` interface that allows creating
-an unordered collection or list, where duplicate values are not allowed. As the name implies, a set in Java is used to
-create a mathematical set.
+- `Sets`:\
+  `Set` in Java is an interface declared in java.util package. It extends the `Collection` interface that allows
+  creating
+  an unordered collection or list, where duplicate values are not allowed. As the name implies, a set in Java is used to
+  create a mathematical set.
 
-Java `List` is an ordered collection. Java `List` is an interface that extends `Collection` interface. Java List
-provides control over the position where you can insert an element. You can access elements by their index and also
-search elements in the list.
+- `List`:\
+  Java `List` is an ordered collection. Java `List` is an interface that extends `Collection` interface. Java List
+  provides control over the position where you can insert an element. You can access elements by their index and also
+  search elements in the list.
 
-Java `Queue` represents an ordered list of elements. Java Queue follows `FIFO` order to insert and remove its elements.
-FIFO stands for `First In First Out`. Java Queue supports all methods of `Collection` interface. Most frequently used
-Queue implementations are LinkedList, ArrayBlockingQueue and PriorityQueue.
+- `Queue`:\
+  Java `Queue` represents an ordered list of elements. Java Queue follows `FIFO` order to insert and remove its
+  elements.
+  FIFO stands for `First In First Out`. Java Queue supports all methods of `Collection` interface. Most frequently used
+  Queue implementations are LinkedList, ArrayBlockingQueue and PriorityQueue.
 
 #### Compare `ArrayList` and `LinkedList` in Java.
 
-`ArrayList` is efficient for random access, retrieval by index, and overall faster iteration, while `LinkedList` is
-more efficient for frequent insertions and deletions. The choice between them depends on the specific requirements of
-your application, such as the type of operations performed, the size of the list, and the access patterns.
-`ARRAYLIST`: ![img.png](../web/img.png)
-`LINKEDLIST`: ![img_1.png](../web/img_1.png)
+- `ArrayList`:
+    - `Underlying Data Structure`:
+      Uses a dynamic array to store elements. It allows fast random access but may require resizing when the
+      array is full.
+    - `Access Time`:
+      Provides fast random access and retrieval of elements using an index. Access time is O(1).
+    - `Insertion/Deletion Time`:
+      Slower for inserting or deleting elements in the middle, as it may require shifting elements. Time
+      complexity is O(n) for such operations.
+    - `Memory Overhead`:
+      Generally has less memory overhead compared to LinkedList.
+    - `Use Cases`:
+      Suitable when random access and retrieval are frequent, and the collection size doesn't change
+      frequently.
 
-#### Are sets sorted in Java?
+- `LinkedList`:
+    - `Underlying Data Structure`:
+      Uses a doubly-linked list to store elements. Each element points to the next and previous elements in
+      the list.
+    - `Access Time`:
+      Accessing elements by index is slower compared to ArrayList. Time complexity is O(n) for accessing
+      elements by index.
+    - `Insertion/Deletion Time`:
+      Faster for inserting or deleting elements in the middle, as it only requires updating the links. Time
+      complexity is O(1) for such operations.
+    - `Memory Overhead`:
+      Generally has more memory overhead due to the additional storage needed for links.
+    - `Use Cases`:
+      Suitable when frequent insertions or deletions are required, and random access is less critical.
+      Useful for implementing queues and certain algorithms.
 
-`HashSet`: This implementation does not maintain any specific order for its elements. The order in which elements are
-stored and retrieved may vary and is not predictable. It provides constant-time performance for adding, removing, and
-checking for the presence of elements.
+![img_1.png](img_1.png)
 
-`TreeSet`: This implementation maintains the elements in sorted order according to their natural ordering (if the
-elements implement the 'Comparable' interface) or a specified comparator. The elements are stored in a binary search
-tree data structure, allowing efficient access and operations with a logarithmic time complexity.
+#### Are `sets` sorted in Java?
 
-`LinkedHashSet`: This implementation maintains the elements in the order in which they were added. It combines the
-functionality of a hash table and a linked list, ensuring predictable iteration order. LinkedHashSet provides
-constant-time performance for adding, removing, and checking for element existence, similar to HashSet
+- `HashSet`:\
+  This implementation does not maintain any specific order for its elements. The order in which elements are
+  stored and retrieved may vary and is not predictable. It provides constant-time performance for adding, removing, and
+  checking for the presence of elements.
+
+- `TreeSet`:\
+  This implementation maintains the elements in sorted order according to their natural ordering (if the
+  elements implement the 'Comparable' interface) or a specified comparator. The elements are stored in a binary search
+  tree data structure, allowing efficient access and operations with a logarithmic time complexity.
+
+- `LinkedHashSet`:\
+  This implementation maintains the elements in the order in which they were added. It combines the
+  functionality of a hash table and a linked list, ensuring predictable iteration order. LinkedHashSet provides
+  constant-time performance for adding, removing, and checking for element existence, similar to HashSet
 
 ## Language features
 

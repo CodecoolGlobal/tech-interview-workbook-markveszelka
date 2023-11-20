@@ -27,14 +27,14 @@ Microservices is an architectural style that structures an application as a coll
 Each service is independently deployable and scalable.
 
 - `Advantages`:
-    - Scalability: Easy to scale individual components.
-    - Maintainability: Because of smaller codebase and scope.
-    - Flexibility: Use of different technologies and languages.
+    - `Scalability`: Easy to scale individual components.
+    - `Maintainability`: Because of smaller codebase and scope.
+    - `Flexibility`: Use of different technologies and languages.
 
 - `Disadvantages`:
-    - Complexity: More moving parts mean more complexity.
-    - Data Integrity: Requires careful management of data between services.
-    - Network Overhead: Due to inter service communication.
+    - `Complexity`: More moving parts mean more complexity.
+    - `Data Integrity`: Requires careful management of data between services.
+    - `Network Overhead`: Due to inter service communication.
 
 <div style="text-align:center;">
 <img src="/docs/advance/img_6.png" data-origin="img6.png" alt="img6.png" style="width:50%;">
@@ -59,20 +59,34 @@ complexity, facilitate maintenance, and allow for scalability.
 
 #### What is `Dependency Injection`?
 
-Dependency Injection is a design pattern where an object’s dependencies are injected by an external entity, promoting
+`Dependency Injection is a design pattern` where an object’s dependencies are injected by an external entity, promoting
 loose coupling and enhancing testability and maintainability.
+
+There are several different styles of dependency injection:
+
+- `Interface injection`: An injector method, provided by a dependency, injects the dependency into another client.
+  Clients
+  then need to implement an interface that uses a setter method to accept the dependency.
+- `Constructor injection`: An injector provides a dependency using a client class constructor. It is used when a class
+  object is created.
+- `Setter injection`. An injector provides a dependency using the setter method, which sets and modifies the value of a
+  class's private instance variable.
+- `Method injection`: A client class is used to implement an interface. A method then provides the dependency, and an
+  injector uses the interface to supply the dependency to the class.
 
 #### What is the `DAO pattern`? When and how to implement?
 
-`DAO (Data Access Object) pattern` abstracts and encapsulates all access to the data source. Use DAO to separate
-low-level data accessing operations from high-level business services. Implement when you want to decouple business
-logic from data access logic.
+`DAO (Data Access Object) pattern` abstracts and encapsulates all access to the data source. Use DAO to `separate
+low-level data accessing operations from high-level business services`. Implement when you want to `decouple business
+logic from data access logic`.
 
 #### What is `SOA`? When to use?
 
 `SOA (Service-Oriented Architecture)` is a style where services are provided to the other components via protocol
 requests. Use SOA when building scalable, maintainable, and reusable systems, particularly when integrating diverse
 systems.
+
+![img_34.png](img_34.png)
 
 ### Testing
 
@@ -182,13 +196,13 @@ Jenkins, Travis CI, CircleCI, GitLab CI/CD, and `GitHub Actions` are examples of
 
 #### What is `Continuous Delivery`?
 
-`Continuous Delivery (CD)` is the practice of keeping codebase in a deployable state and releasing changes to users
+`Continuous Delivery (CD)` is the practice of `keeping codebase in a deployable state` and releasing changes to users
 safely and quickly through automated deployments.
 
 #### What is `Continuous Deployment`?
 
 `Continuous Deployment` is an extension of Continuous Delivery where every change that passes all stages of the
-production pipeline is released to the users automatically, with no human intervention.
+production pipeline is `released to the users automatically`, with no human intervention.
 
 #### What is `DevOps`?
 
@@ -211,7 +225,7 @@ approach to software development.
 `UML (Unified Modeling Language)` is a standardized modeling language used to `visualize the design of a system`. Types
 include Class Diagrams, Sequence Diagrams, Use Case Diagrams, and Activity Diagrams.
 
-#### What is a `UML class diagram`? What are the typical elements?
+#### What is a `UML Class Diagram`? What are the typical elements?
 
 A UML class diagram represents the static structure of a system, showing the system's classes, attributes, operations,
 and relationships. Typical elements include Classes, Interfaces, and Associations.
@@ -231,6 +245,10 @@ and relationships. Typical elements include Classes, Interfaces, and Association
 Iterator Pattern provides a way to access the elements of an aggregate object sequentially without exposing its
 underlying representation, promoting a cleaner API and encapsulation of the internal structure.
 
+<div style="text-align:center;">
+<img src="/docs/advance/img_35.png" data-origin="img_35.png" alt="img_35.png" style="width:50%;">
+</div>
+
 #### What do you know about the `SOLID principles`?
 
 `SOLID principles` are a set of design principles in object-oriented design and programming:
@@ -243,8 +261,9 @@ underlying representation, promoting a cleaner API and encapsulation of the inte
 
 #### How would you `separate data storage code and business logic code` (which uses stored data) in an application?
 
-Separate data storage and business logic by using the Repository pattern to handle data access and the Service pattern
-to handle business logic. This promotes `Separation of Concerns` and makes the application easier to maintain and test.
+Separate data storage and business logic by `using the Repository pattern` to handle data access and
+the `Service pattern`to handle business logic. This promotes `Separation of Concerns` and makes the application easier
+to maintain and test.
 
 <div style="text-align:center;">
 <img src="/docs/advance/img_13.png" data-origin="img_13.png" alt="img_13.png" style="width:50%;">
@@ -256,22 +275,24 @@ to handle business logic. This promotes `Separation of Concerns` and makes the a
 
 #### What is the `difference between Stack and Queue` data structure?
 
+Both are linear data structures.
+
 - `Stack`: A `LIFO (Last In First Out)` structure. The element inserted at the last, is the first element to come out of
-  the list.
+  the list. In `Stack` `elements can be inserted and deleted only from one side` of the list, called the `top`.
 
 <div>
 <img src="/docs/advance/img_14.png" data-origin="img_14.png" alt="img_14.png" style="width:30%;">
 </div>
 
 - `Queue`: A `FIFO (First In First Out)` structure. The element inserted at the first, is the first element to come out
-  of
-  the list.
+  of the list. In `Queue` elements `can be inserted only from one side of the list called rear`, and the `elements can
+  be deleted only from the other side called the front`.
 
 <div>
 <img src="/docs/advance/img_15.png" data-origin="img_15.png" alt="img_15.png" style="width:30%;">
 </div>
 
-#### What is a `graph`? What are simple graphs? What are directed graphs? What are weighted graphs?
+#### What is a `GRAPH`? What are simple graphs? What are directed graphs? What are weighted graphs?
 
 <div>
 <img src="/docs/advance/img_21.png" data-origin="img_21.png" alt="img_21.png" style="width:20%;">
@@ -324,15 +345,16 @@ Graphs can be stored using `Adjacency List (b)` or `Adjacency Matrix (c)`. (szom
 
 Graph traversal algorithms are techniques used to explore all vertices of a graph.
 
-- `BFS (Breadth-First Search)`: Explores all neighbor vertices at the current depth before moving on to vertices at the
+- `BFS (Breadth-First Search)`: Explores all neighbor `horizontally`, vertices at the current depth before moving on to
+  vertices at the
   next depth level. Uses a `queue` to achieve this.
 
 <div>
 <img src="/docs/advance/Animated_BFS.gif" data-origin="Animated_BFS.gif" alt="Animated_BFS.gif">
 </div>
 
-- `DFS (Depth-First Search)`: Explores as far as possible along each branch before backtracking. Uses a `stack` or
-  recursion to achieve this.
+- `DFS (Depth-First Search)`: Explores as far as possible along each branch `vertically` before backtracking. Uses a
+  `stack` or `recursion to achieve this.
 
 <div>
 <img src="/docs/advance/Depth-First-Search.gif" data-origin="Depth-First-Search.gif" alt="Depth-First-Search.gif">
@@ -370,7 +392,12 @@ This process is recursively applied to sub-arrays until the array is sorted.
 service. It provides a way for users to grant third-party applications access to their resources without sharing their
 credentials.
 
-![img_32.png](img_32.png)
+<div style="text-align:center;">
+<img src="/docs/advance/img_33.png" data-origin="img_33.png" alt="img_33.png" style="width: 60%;">
+</div>
+<div style="text-align:center;">
+<img src="/docs/advance/img_32.png" data-origin="img_32.png" alt="img_32.png" style="width: 50%;">
+</div>
 
 #### What is `Basic Authentication`?
 
@@ -381,8 +408,8 @@ Basic Authentication is a simple authentication scheme built into the HTTP proto
 
 #### What is `CORS`, why it’s needed in browsers?
 
-`Cross-Origin Resource Sharing (CORS)` is a security feature implemented by web browsers to restrict web pages from 
-making requests to a domain different from the one that served the web page. It’s needed to prevent malicious websites 
+`Cross-Origin Resource Sharing (CORS)` is a security feature implemented by web browsers to restrict web pages from
+making requests to a domain different from the one that served the web page. It’s needed to prevent malicious websites
 from making unauthorized API requests on behalf of the user.
 
 ![img_30.png](img_30.png)
@@ -411,44 +438,46 @@ and Secure flags.
 
 ### Threaded programming
 
-#### When do you need to use threads in an application?
+#### When do you need to use `threads` in an application?
 
-Threads are needed when an application has to perform multiple tasks concurrently, such as handling multiple user
+Threads are needed when an application has to `perform multiple tasks concurrently`, such as handling multiple user
 requests or performing background tasks, to improve the application’s responsiveness and performance.
 
-#### What is a daemon thread?
+#### What is a `daemon thread`?
 
-A daemon thread is a background thread that runs as long as there are non-daemon threads running. Once the last
+A daemon thread is a `background thread` that runs as long as there are non-daemon threads running. Once the last
 non-daemon thread terminates, the daemon thread(s) terminate automatically.
 
-#### What is the difference between concurrent and parallel execution of code?
+#### What is the difference between `concurrent and parallel` execution of code?
 
--Concurrent Execution: Multiple tasks are making progress in overlapping time frames, but not necessarily
-simultaneously,
-typically achieved with multiple threads or processes.
--Parallel Execution: Multiple tasks are executed simultaneously, typically achieved with multiple processors or cores.
+- `Concurrent Execution`: Multiple tasks are making progress in overlapping time frames, but not necessarily
+  simultaneously, typically achieved with multiple threads or processes.
+- `Parallel Execution`: Multiple tasks are executed simultaneously, typically achieved with multiple processors or
+  cores.
+
+![img_36.png](img_36.png)
 
 #### What is the most important problem developers are faced when using threads?
 
 Developers using threads often struggle with synchronization issues, race conditions, and deadlocks, which can lead to
 complex and hard-to-debug problems in multithreaded applications.
 
-#### In what kind of situations can deadlocks occur?
+#### In what kind of situations can `deadlocks occur`?
 
 Deadlocks can occur when two or more threads are blocked forever, each waiting for the other to release a lock. This
 usually happens in situations involving multiple resources and no thread can proceed because each holds a lock that the
 other needs.
 
-#### What are possible ways to prevent deadlocks from occurring?
+#### What are possible ways to `prevent deadlocks` from occurring?
 
-To prevent deadlocks:
+`To prevent deadlocks`:
 
--Use lock hierarchy to impose a global order in which all threads acquire locks.
--Use lock timeouts or try-acquire to avoid indefinite waiting.
--Use deadlock detection tools to identify and fix them during development.
+- Use lock hierarchy to impose a global order in which all threads acquire locks.
+- Use lock timeouts or try-acquire to avoid indefinite waiting.
+- Use deadlock detection tools to identify and fix them during development.
 
-#### What does critical section or critical region mean in the context of concurrent programming?
+#### What does critical section or critical region mean in the context of `concurrent programming`?
 
 In concurrent programming, a critical section or critical region is a piece of code that accesses shared resources and
-must not be executed by more than one thread at a time to avoid data corruption and race conditions. Proper
-synchronization mechanisms like locks or semaphores are used to protect critical sections.
+must not be executed by more than one thread at a time to avoid data corruption and race conditions. `Proper
+synchronization mechanisms` like locks or semaphores are used to protect critical sections.
