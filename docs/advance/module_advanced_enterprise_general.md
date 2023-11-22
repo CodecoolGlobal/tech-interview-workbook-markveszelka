@@ -322,8 +322,8 @@ Both are linear data structures.
 </div>
 
 - `Binary Search Trees (BST)`:
-    - The left subtree of a node contains only nodes with keys lesser than the node’s key.
-    - The right subtree of a node contains only nodes with keys greater than the node’s key.
+    - The `left subtree` of a node contains only nodes with keys `lesser` than the node’s key.
+    - The `right subtree` of a node contains only nodes with keys `greater` than the node’s key.
     - The left and right subtree each must also be a binary search tree.
 
 ![img_24.png](img_24.png)

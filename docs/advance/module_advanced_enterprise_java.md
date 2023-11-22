@@ -79,7 +79,6 @@ The `@RequestMapping`annotation sets the specific endpoint at which a handler wi
 WebApplicationContext associated with it.
 
 ```java
-
 @Controller
 @RequestMapping("/user")
 @ResponseBody
@@ -317,11 +316,9 @@ databases, due to the differing ways they represent data and relationships.
 
 JpaRepository is a JPA specific extension of Repository in Spring Data, providing functionalities like CRUD operations,
 pagination, and sorting. Developers can define `queries using method names` or `@Query annotations`, allowing for
-concise
-and expressive data access code.
+concise and expressive data access code.
 
 1. `Query Methods`:
-
 ```java
 public interface UserRepository extends JpaRepository<User, Long> {
     List<User> findByFirstName(String firstName);
@@ -331,7 +328,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
 ```
 
 2. `@Query Annotation`:
-
 ```java
 public interface UserRepository extends JpaRepository<User, Long> {
     @Query("SELECT u FROM User u WHERE u.email = :email")
