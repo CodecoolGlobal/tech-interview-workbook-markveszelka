@@ -7,6 +7,8 @@
 `Arrays` are ordered collection of values, they store a list of values, whereas `objects` store key - value pairs. They
 are both special data types and also they are both mutable.
 
+![img.png](img.png)
+
 ```js
 // ARRAY:
 // Creating an array of numbers
@@ -255,16 +257,20 @@ some kind of event, such as a click or an API response, has taken place. Callbac
 allowing the main execution of code to continue while the callback function is executed at a later time.
 
 ```js
-function myFirst() {
-    myDisplayer("Hello");
+function myDisplayer(message) {
+    console.log(message);
 }
 
-function mySecond() {
-    myDisplayer("Goodbye");
+function myFirst(callback) {
+    callback("Hello");
 }
 
-myFirst();
-mySecond();
+function mySecond(callback) {
+    callback("Goodbye");
+}
+
+myFirst(myDisplayer);
+mySecond(myDisplayer);
 ```
 
 #### What are the differences between `for` loops and `forEach`?
@@ -287,23 +293,43 @@ array.forEach(function (element) {
 });
 ```
 
-`Syntax`:\
-`for loops`: have a more complex syntax, which allows for more control over the iteration, including the use of
-a counter and the ability to exit (to `break`) the loop early.\
-`forEach`: (methods) loops have a simpler syntax and do
-not have a counter or the ability to exit early.
+- `Syntax`:
+    - `for loops`: have a more complex syntax, which allows for more control over the iteration, including the use of
+      a counter and the ability to exit (to `break`) the loop early.
+    - `forEach`: (methods) loops have a simpler syntax and do
+      not have a counter or the ability to exit early.
 
-`Scope`:\
-`for loops`: have their own block scope, which means variables declared inside the loop are only accessible
-within the loop.\
-`forEach`: loops do not have their own block scope and variables declared inside the loop are accessible
-outside the loop.
+- `Scope`:
+    - `for loops`: have their own block scope, which means variables declared inside the loop are only accessible
+      within the loop.
+    - `forEach`: loops do not have their own block scope and variables declared inside the loop are accessible
+      outside the loop.
+
+- `Break statment`:
+    - `for loop`: can break iteration
+    - `forEach`: cannot break
+
+- `Modifying array`:
+    - `for loop`: cannot modify the original array during iteration
+    - `forEach`: can modify the original array
 
 `return statement`: The return statement inside a forEach loop only breaks out of the current iteration, not the entire
 loop. In contrast, the return statement inside a for loop will exit the entire loop.
 
-Modifying the array: forEach loops cannot modify the original array during iteration, while for loops can modify the
-original array.
+```js
+const numbers = [1, 2, 3, 4, 5];
+numbers.forEach((number) => {
+    if (number === 3) {
+        // This return statement only exits the current iteration, not the entire loop
+        return;
+    }
+    console.log(number);
+});
+// Output: 1
+//         2
+//         4
+//         5
+```
 
 In summary, for loops are better suited for situations that require more control over the iteration, while forEach loops
 are simpler and better suited for basic iteration tasks.
@@ -312,21 +338,27 @@ are simpler and better suited for basic iteration tasks.
 
 #### What is the difference between `JavaScript` data structures and `JSON` data structures?
 
-`Syntax`: JSON data structures use strict syntax rules and only support a limited set of data
-types (`strings, numbers, objects, arrays, booleans, and null`), while JavaScript data structures have a more flexible
-syntax and support a wider range of data types, including `functions and dates`.
+- `Syntax`:
+    - `JSON` data structures use strict syntax rules and only support a limited set of data
+      types (`strings, numbers, objects, arrays, booleans, and null`).
+    - `JavaScript` data structures have a more flexible
+      syntax and support a wider range of data types, including `functions and dates`.
 
-`Purpose`: JSON data structures are primarily used `for data interchange between systems`, while JavaScript data
-structures are used `for data storage and manipulation` within a JavaScript application.
+- `Purpose`:
+    - `JSON` data structures are primarily used `for data interchange between systems`.
+    - `JavaScript` data
+      structures are used `for data storage and manipulation` within a JavaScript application.
 
-`Serialization/Deserialization`: JSON data structures can be easily serialized (converted to a string representation)
-and deserialized (converted back to a JavaScript object) using the `JSON.stringify()` and `JSON.parse()` methods,
-respectively. JavaScript data structures can also be serialized and deserialized, but this process is more complex and
-requires custom code.
+- `Serialization/Deserialization`:
+    - `JSON` data structures can be easily serialized (converted to a string representation) and deserialized
+      (converted back to a JavaScript object) using the `JSON.stringify()` and `JSON.parse()` methods, respectively.
+    - `JavaScript` data structures can also be serialized and deserialized, but this process is more complex and
+      requires custom code.
 
-`Representation`: JSON data structures can only represent a single, simple data structure (such as an object or array),
-while JavaScript data structures can represent complex data structures, including nested objects and arrays, and linked
-data structures such as linked lists and trees.
+- `Representation`:
+    - `JSON` data structures can only represent a single, simple data structure (such as an object or array).
+    - `JavaScript` data structures can represent complex data structures, including nested objects and arrays, and
+      linked data structures such as linked lists and trees.
 
 In conclusion, JSON data structures are best suited for data interchange between systems, while JavaScript data
 structures are better suited for data storage and manipulation within a JavaScript application.
@@ -646,18 +678,18 @@ Hoisting in `Function Statement` and `Function Expression`:
 
 #### What are the `advantages of using a version control system`?
 
-`Collaboration`: multiple developers can work on the same codebase simultaneously, and changes can be easily merged
-together.\
-`Backup`: version control systems keep a history of all changes made to the code, so it is easy to revert to a previous
-version if necessary.\
-`Traceability`: version control systems allow you to track who made each change and why, making it easier to understand
-the history of the code and debug issues.\
-`Branching`: version control systems allow you to create separate branches for different features or bug fixes, so you
-can work on multiple features simultaneously without affecting the main codebase.\
-`Automation`: version control systems can be integrated with other tools, such as continuous integration and deployment
-pipelines, to automate tasks such as building, testing, and deploying code.\
-`Portability`: version control systems allow you to move your code to different systems and environments, making it
-easier to work on the same codebase from different locations.
+- `Collaboration`: multiple developers can work on the same codebase simultaneously, and changes can be easily merged
+  together.
+- `Backup`: version control systems keep a history of all changes made to the code, so it is easy to revert to a
+  previous version if necessary.
+- `Traceability`: version control systems allow you to track who made each change and why, making it easier to
+  understand the history of the code and debug issues.
+- `Branching`: version control systems allow you to create separate branches for different features or bug fixes, so you
+  can work on multiple features simultaneously without affecting the main codebase.
+- `Automation`: version control systems can be integrated with other tools, such as continuous integration and
+  deployment pipelines, to automate tasks such as building, testing, and deploying code.
+- `Portability`: version control systems allow you to move your code to different systems and environments, making it
+  easier to work on the same codebase from different locations.
 
 #### What’s the difference between Git and GitHub?
 

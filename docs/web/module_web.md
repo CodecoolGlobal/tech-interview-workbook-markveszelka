@@ -77,7 +77,7 @@ let greeter = "hey hi";
 // SCOPING:
 let greeter = "hey hi"; // global scope
 if (true) {
-    let greeter = "say Hello instead"; // function scope
+    let greeter = "say Hello instead"; // block scope
     console.log(greeter); // Expected: 'say Hello instead'
 }
 console.log(greeter); // Expected: 'hey hi'
@@ -191,7 +191,9 @@ The `client-server architecture` refers to a system that hosts, delivers, and ma
 that the client requests. In this model, all requests and services are delivered over a network, and it is also referred
 to as the networking computing model or client-server network.
 
-![img_10.png](img_10.png)
+<div style="text-align:center;">
+<img src="/docs/web/img_10.png" data-origin="img_10.png" alt="1698625303361.gif" style="width:40%;">
+</div>
 
 #### What is the difference between `synchronous` and `asynchronous` execution?
 
@@ -376,8 +378,8 @@ weather updates on your phone. An API is a Collection of HTTP endpoints on the s
 
 #### What is `REST API`?
 
-`REST API` stands for `Representational State Transfer Application Programming Interface`. It is a set of constraints
-and principles for designing networked applications. REST is an architectural style that defines a set of constraints
+`REST API` stands for `Representational State Transfer Application Programming Interface`. `It is a set of constraints
+and principles for designing networked applications`. REST is an architectural style that defines a set of constraints
 to be used when creating web services. A RESTful API is an API that adheres to these constraints and principles.
 
 `REST is based on a client-server architecture`, where the `client` (such as a web browser or a mobile
