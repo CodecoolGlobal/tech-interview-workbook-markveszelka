@@ -1,5 +1,336 @@
 # OOP Basics with Java questions
 
+### OOP and SOLID principles
+
+#### What is `Object-Oriented Programming (OOP)`?
+
+<div style="text-align:center;">
+<img src="/docs/oop/img_42.png" data-origin="img_42.png" alt="img.png" style="width:40%;">
+</div>
+
+`Object-Oriented programming (OOP)` is a programming paradigm based on the `concept of OBJECTS`, where objects
+representing real-world things, which can contain `DATA AND CODE`:
+
+- *DATA* in the form of `fields` (often known as `attributes` or `properties`), and
+- *CODE* in the form of `procedures` (often known as `methods`).
+
+In OOP, computer programs are designed by making them out of objects that interact with one
+another.
+
+##### Basic Terminologies:
+
+- *`Object`*:
+  An object is an instance of a class, serving as the working entity within the program.
+- *`Class`*:
+  A class serves as a template or blueprint defining the properties and behaviors that objects of that type possess.
+- *`Method`*:
+  Methods represent the behaviors of a class, specifying what operations an object can perform.
+- *`Instance`*:
+  While often used interchangeably with "object," an instance refers specifically to a unique occurrence of a class,
+  each with its own set of data and behaviors.
+
+**A blueprint for a house design is like a class description.
+All the houses built from that blueprint are objects of that
+class.
+A given house is an instance.**
+
+<div style="text-align:center;">
+<img src="/docs/oop/img_41.png" data-origin="img_41.png" alt="img.png" style="width:60%;">
+</div>
+
+#### What is `Is-a` vs. `Has-a` relationship between classes? `Inheritance` vs. `Composition` (`Aggregation`)?
+
+1. **`Is-a` Relationship (Inheritance):**
+    - In an "is-a" relationship, one class is considered to be a specialized version of another class.
+    - This relationship is typically `implemented through inheritance`, where a `subclass (or child class)` inherits
+      attributes and behaviors from a `superclass (or parent class)`.
+    - The subclass "is-a" type of the superclass, meaning it `shares common characteristics and behavior`s but may also
+      have its own unique features.
+    - For example, if you have a superclass called `Animal`, you might have subclasses like `Dog`, `Cat`, and `Bird`,
+      which all inherit traits and behaviors from the `Animal` class but may have their own specific attributes and
+      methods.
+
+2. **`Has-a` Relationship (Composition):**
+    - In a "has-a" relationship, `one class contains an instance of another class as a member or attribute`.
+    - This relationship is typically `implemented through composition`, where one class contains an object of another
+      class as one of its instance variables.
+    - The containing class "has-a" relationship with the contained class, meaning it has access to its functionality
+      through its instance.
+    - For example, a `Car` class might have a "has-a" relationship with an `Engine` class, where each `Car` contains
+      an `Engine` object to power it.
+
+In summary, "is-a" relationships are about inheritance and specialization, while "has-a" relationships are about
+composition and containing objects as part of another object's structure.
+Both concepts are fundamental in object-oriented design and help in creating modular, reusable, and maintainable code.
+
+<div style="text-align:center;">
+<img src="/docs/oop/img_43.png" data-origin="img_43.png" alt="img.png" style="width:50%;">
+</div>
+
+<div style="text-align: center;">
+
+**Is-a / Inheritance:**  
+Person - Student / Lecturer
+
+**Has-a / Composition:**  
+Course - Student / Lecturer
+
+</div>
+
+Show more info: https://www.baeldung.com/cs/inheritance-aggregation
+
+#### What is `ENCAPSULATION`?
+
+In software systems, `encapsulation` refers to the `bundling of data with the mechanisms or methods that operate on the
+data`. It may also refer to the `limiting of direct access to some of that data`, such as an object's components.
+Essentially, encapsulation prevents external code from being concerned with the internal workings of an object.
+
+1. **Wrapping / Bundling data and methods into a single unit like a Class**
+2. **Limiting direct access** by using access modifiers to prevent unintended modification and maintain integrity
+3. **Data hiding** by using access modifiers and methods
+4. It helps to **achieve loose coupling**, promotes abstraction, helps modularity and maintainability
+5. **Easier to unit test the code**, easier to reuse
+
+**For example, Phone number of your friend's friend. Ask your friend for the number and not taking his phone.**
+
+![img_47.png](img_47.png)
+
+#### What is `ABSTRACTION`?
+
+Abstraction is a process of `hiding the implementation details from the user`, `only the functionality will be provided`
+to the user. In other words, **the user will have the information on what the object does instead of how it does it**.
+
+1. Isolating the impact of change
+2. Helps to model real-world entities
+3. Creating class hierarchy
+4. **Hiding implementation details**
+5. **Defining interfaces and abstract classes**
+
+**For example, a coffee machine. It does a lot of stuff and makes quirky noises under the hood. But all you have to do
+is put in coffee and press a button.**
+
+![img_45.png](img_45.png)
+
+#### What is `POLYMORPHISM`?
+
+In Object-Oriented Programming, polymorphism (from the Greek meaning `“having multiple forms”`) is the characteristic of
+being able to assign a different meaning or usage to something in different contexts — specifically, to allow an entity
+such as a function, or an object to have more than one form.
+
+There are 2 types of polymorphism implementations:
+
+1. **Static Polymorphism: resolved at compile-time / Method Overloading**
+2. **Dynamic Polymorphism: resolved at run-time / Method Overriding**
+
+**For example, if anybody says CUT: The Surgeon, The Hairdresser / The Actor, they do three different things**
+
+![img_46.png](img_46.png)
+
+#### What is `INHERITANCE`?
+
+Inheritance can be defined as the process `where one class acquires the properties (methods and fields) of another`.
+(OR)
+In object-oriented programming, `inheritance is when an object or class is based on another object` (prototypal
+inheritance) or class (class-based inheritance), using the same implementation (inheriting from an object or class)
+specifying implementation to maintain the same behavior
+The idea of inheritance `implements the "is-a" relationship`.
+
+1. **It helps to eliminate redundant code / DRY / promotes reusability**
+2. Less development and maintenance since reused
+3. **Parent-Child relationship: "IS-A"**
+4. **Inheritance facilitates polymorphism**
+
+**For example, mammal IS-A animal, dog IS-A mammal hence dog IS-A animal as well and so on.**
+
+![img_44.png](img_44.png)
+
+#### What is `S for SINGLE RESPONSIBILITY` (SRP)?
+
+A class should only have one responsibility. Furthermore, it should only have one reason to change.
+
+1. **Better organization and maintainability**
+2. **Reduce coupling**, less dependent
+3. **Easier to test and debug**
+4. **Promotes Separation of Concerns**
+5. **More scalable and flexible**
+
+```java
+public class Book {
+    private String name;
+    private String author;
+    private String text;
+
+    //constructor, getters and setters
+    // methods that directly relate to the book properties
+    public String replaceWordInText(String word, String replacementWord) {
+        return text.replaceAll(word, replacementWord);
+    }
+
+    public boolean isWordInText(String word) {
+        return text.contains(word);
+    }
+}
+
+// TODO: THIS IS VIOLATION
+public class BadBook {
+    //...
+    void printTextToConsole() {
+        // our code for formatting and printing the text
+    }
+}
+
+// TODO: THIS IS GOOD
+public class BookPrinter {
+    // methods for outputting text
+    void printTextToConsole(String text) {
+        //our code for formatting and printing the text
+    }
+
+    void printTextToAnotherMedium(String text) {
+        // code for writing to any other location..
+    }
+}
+```
+
+#### What is `O for OPEN / CLOSED` (OCP)?
+
+Classes should be `open for extension but closed for modification`. In doing so, we stop ourselves from modifying
+existing code and causing potential new bugs in an otherwise happy application.
+
+```java
+public class Guitar {
+    private String make;
+    private String model;
+    private int volume;
+    //Constructors, getters & setters
+}
+
+public class SuperCoolGuitarWithFlames extends Guitar {
+    private String flameColor;
+    //constructor, getters + setters
+}
+```
+
+1. **Open for Extension:** Clear extension points or `interfaces` that can be implemented by new code
+2. **Closed for Modification:** Modifying existing code can introduce unexpected side effects and break existing
+   functionality.
+
+#### What is `L for LISKOV'S SUBSTITUTION` (LSP)?
+
+If `class S is a subtype of class C`, we `should be able to replace class C with subtype S without disrupting` the
+behavior of our program.
+
+```java
+public interface Car {
+    void turnOnEngine();
+    void accelerate();
+}
+
+public class MotorCar implements Car {
+    private Engine engine;
+    //Constructors, getters + setters
+    public void turnOnEngine() {
+        //turn on the engine!
+        engine.on();
+    }
+
+    public void accelerate() {
+        //move forward!
+        engine.powerOn(1000);
+    }
+}
+
+public class ElectricCar implements Car {
+    public void turnOnEngine() {
+        // TODO: THIS IS A VIOLATION OF LISKOV!
+        throw new AssertionError("I don't have an engine!");
+    }
+
+    public void accelerate() {
+        //this acceleration is crazy!
+    }
+}
+```
+
+#### What is `I for INTERFACE SEGREGATION`?
+
+Larger interfaces should be split into smaller ones. By doing so, we can ensure that implementing classes only need to
+be concerned about the methods that are of interest to them.
+
+```java
+public interface BearKeeper {
+    void washTheBear();
+    void feedTheBear();
+    void petTheBear();
+}
+
+public interface BearCleaner {
+    void washTheBear();
+}
+
+public interface BearFeeder {
+    void feedTheBear();
+}
+
+public interface BearPetter {
+    void petTheBear();
+}
+
+public class BearCarer implements BearCleaner, BearFeeder {
+    public void washTheBear() {
+        //I think we missed a spot...
+    }
+
+    public void feedTheBear() {
+        //Tuna Tuesdays...
+    }
+}
+
+public class CrazyPerson implements BearPetter {
+    public void petTheBear() {
+        //Good luck with that!
+    }
+}
+```
+
+#### What is `D for DEPENDECY INVERSION` (DIP)?
+
+The principle of dependency inversion refers to the **decoupling** of software modules. 
+**This way, instead of high-level modules depending on low-level modules, both will depend on abstractions.**
+
+```java
+// By declaring the StandardKeyboard and Monitor with the new keyword, we’ve tightly coupled these three classes together.
+public class Windows98Machine {
+
+    private final StandardKeyboard keyboard;
+    private final Monitor monitor;
+
+    public Windows98Machine() {
+        monitor = new Monitor();
+        keyboard = new StandardKeyboard();
+    }
+}
+
+// Decouple it using Keyboard Interface, then use Dependency Injection to add Keyboard to WindowsMachine
+// They coupled through abstraction and easier to unit test!
+public interface Keyboard { }
+
+public class StandardKeyboard implements Keyboard { }
+
+public class Windows98Machine{
+
+    private final Keyboard keyboard;
+    private final Monitor monitor;
+
+    public Windows98Machine(Keyboard keyboard, Monitor monitor) {
+        this.keyboard = keyboard;
+        this.monitor = monitor;
+    }
+}
+```
+
+For more: https://www.baeldung.com/solid-principles
+
 ### Java ecosystem
 
 #### What is the `JVM`?
@@ -21,7 +352,16 @@ different bytecode file allows for platform independence. A `Java compiler conve
 ![img_2.png](img_2.png)
 
 ```java
-Java Source Code(.java)->Java Compiler(javac)->Java Bytecode(.class)->Java Virtual Machine(JVM)->Execution
+Java Source
+
+Code(.java)->
+
+Java Compiler(javac)->
+
+Java Bytecode(.class)->
+Java Virtual
+
+Machine(JVM)->Execution
 ```
 
 #### What is `Java bytecode`?
@@ -514,18 +854,20 @@ similar actions but with different inputs or data types. Method overloading allo
 with varying parameters, providing a more intuitive and flexible API for users of the class.
 
 ```java
-public void Square(int number){
-        int square=number*number;
-        System.out.printIn(“Method with Integer Argument Called:“+square);
-        }
-public void Square(double number){
-        double square=number*number;
-        System.out.printIn(“Method with double Argument Called:“+square);
-        }
-public void Square(long number){
-        long square=number*number;
-        System.out.printIn(“Method with long Argument Called:“+square);
-        }
+public void Square(int number) {
+    int square = number * number;
+    System.out.printIn(“Method with Integer Argument Called:“+square);
+}
+
+public void Square(double number) {
+    double square = number * number;
+    System.out.printIn(“Method with double Argument Called:“+square);
+}
+
+public void Square(long number) {
+    long square = number * number;
+    System.out.printIn(“Method with long Argument Called:“+square);
+}
 ```
 
 #### What is _`@Overriding`_ in Java?
@@ -694,12 +1036,20 @@ ones."
 not depend on details. Details should depend on abstractions. Components should depend on abstractions,
 not on concretions."
 
-#### What is _`composition over inheritance`_?
+#### What is *`composition over inheritance`*?
 
-"Composition over inheritance" is a `design principle` in object-oriented programming that suggests favoring
-`composition` (`has-a relationship`) instead of `inheritance` (`is-a relationship`) to achieve code reuse and create
-more
-flexible and maintainable software systems.
+**`“Favor object composition over class inheritance”`** is a `design principle` in object-oriented programming that
+suggests favoring `composition` (`HAS-A relationship`) instead of `inheritance` (`IS-A relationship`) to achieve code
+reuse and create more flexible and maintainable software systems.
+
+1. **The composition provides greater flexibility and maintainability compared to inheritance.**
+   Combining objects can easily create new ones with the desired functionality.
+   Thus, we can modify the data and operations of objects by changing their composition rather than changing the
+   underlying class structure
+2. **Inheritance can lead to tightly coupled code, where changes in the parent class can have unintended consequences
+   for its descendants.**
+   It also makes it more difficult to reuse code, as the relationship between classes can be complex
+   and challenging to understand
 
 #### What is a `model class`?
 
@@ -957,8 +1307,10 @@ application.
 ```sql
 CREATE TABLE table_name
 (
-    column1 datatype constraint,
-    column2 datatype constraint,
+    column1 datatype
+        constraint,
+    column2 datatype
+        constraint,
 );
 ```
 
