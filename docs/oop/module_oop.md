@@ -59,6 +59,10 @@ A given house is an instance.**
     - For example, a `Car` class might have a "has-a" relationship with an `Engine` class, where each `Car` contains
       an `Engine` object to power it.
 
+<div style="text-align:center;">
+<img src="/docs/oop/img_48.png" data-origin="img_48.png" alt="img.png" style="width:60%;">
+</div>
+
 In summary, "is-a" relationships are about inheritance and specialization, while "has-a" relationships are about
 composition and containing objects as part of another object's structure.
 Both concepts are fundamental in object-oriented design and help in creating modular, reusable, and maintainable code.
@@ -220,14 +224,28 @@ public class SuperCoolGuitarWithFlames extends Guitar {
 If `class S is a subtype of class C`, we `should be able to replace class C with subtype S without disrupting` the
 behavior of our program.
 
+1. **Enhanced flexibility and extensibility:** promotes code reuse and simplifies the process of extending
+   functionality.
+2. **Simplified testing and maintenance:** testing can be done at a higher level without needing to consider the
+   specific
+   subclass implementations.
+3. **Facilitates polymorphism:** This means that methods can operate on objects of different subclasses through their
+   common
+   superclass interface, leading to more modular and reusable code.
+4. **Improved code readability and understandability:** LSP encourages a clear and logical class hierarchy where
+   subclasses are cohesive and adhere to the same contracts as their superclasses. This leads to code that is easier to
+   read, understand, and reason about.
+
 ```java
 public interface Car {
     void turnOnEngine();
+
     void accelerate();
 }
 
 public class MotorCar implements Car {
     private Engine engine;
+
     //Constructors, getters + setters
     public void turnOnEngine() {
         //turn on the engine!
@@ -260,7 +278,9 @@ be concerned about the methods that are of interest to them.
 ```java
 public interface BearKeeper {
     void washTheBear();
+
     void feedTheBear();
+
     void petTheBear();
 }
 
@@ -295,7 +315,7 @@ public class CrazyPerson implements BearPetter {
 
 #### What is `D for DEPENDECY INVERSION` (DIP)?
 
-The principle of dependency inversion refers to the **decoupling** of software modules. 
+The principle of dependency inversion refers to the **decoupling** of software modules.
 **This way, instead of high-level modules depending on low-level modules, both will depend on abstractions.**
 
 ```java
@@ -313,11 +333,13 @@ public class Windows98Machine {
 
 // Decouple it using Keyboard Interface, then use Dependency Injection to add Keyboard to WindowsMachine
 // They coupled through abstraction and easier to unit test!
-public interface Keyboard { }
+public interface Keyboard {
+}
 
-public class StandardKeyboard implements Keyboard { }
+public class StandardKeyboard implements Keyboard {
+}
 
-public class Windows98Machine{
+public class Windows98Machine {
 
     private final Keyboard keyboard;
     private final Monitor monitor;
@@ -666,7 +688,7 @@ class Test {
 The key distinction is that `references hold memory addresses` pointing to the actual data, while `primitive types
 directly store their values` in the allocated memory.
 
-- `Primitive Types`:
+- **Primitive Types**:
     - `Primitive types store their values directly in memory`. When you declare a variable of a primitive
       type, `the actual value is stored in that variable`. For example, `int x = 10;` assigns the value 10 directly to
       the
@@ -677,20 +699,23 @@ directly store their values` in the allocated memory.
     - Here, myNumber is a primitive type variable, and it directly holds the value 42 in the memory location where the
       variable is allocated.
 
-- `Reference Types`:
-    - `Reference types`, on the other hand, store references (memory addresses) to objects rather than the
-      actual object itself. When you declare a variable of a reference type, the variable contains the memory address
-      where
-      the object is stored. Objects are created on the heap, and the reference points to the object's location. For
-      example,
+- **Reference Types**:
+    - `Reference types` (**Class, Array, String, Annotation, Interface, Enumeration**), on the other hand, store
+      references (memory addresses) to objects rather than the actual object itself. When you declare a variable of a
+      reference type, the variable contains the memory address where the object is stored. Objects are created on the
+      heap, and the reference points to the object's location.
+      For example,
       `String str = new String("Hello");` stores the reference to the String object on the heap, and str contains the
-      memory
-      address of that object.
+      memory address of that object.
     - ```java
   String myString = new String("Hello");
     ```
     - In this example, myString is a reference type variable. It doesn't directly contain the characters "Hello." Instead, 
       it holds a reference (memory address) pointing to the memory location where the actual string object "Hello" is stored.
+
+![img_49.png](img_49.png)
+
+For more: https://www.javatpoint.com/reference-data-types-in-java
 
 #### What is a `Class` in Java?
 
@@ -1001,6 +1026,50 @@ but `long` can't store null. Attempting to assign null to a long variable will r
 - `Collections Framework`: ArrayList, LinkedList, HashMap (...)
 - `Date and Time`: Date, Calendar, LocalDate (...)
 - `Miscellaneous Utilities`: Scanner, Random, UUID (...)
+
+### EXCEPTIONS
+
+#### What is an exception?
+
+An exception is an event, which occurs during the execution of a program, that disrupts the normal flow of the program's
+instructions.
+
+#### What kind of exceptions are there?
+
+- **CHECKED EXCEPTIONS**: Checked exceptions are called **compile-time exceptions** because these exceptions are checked
+  at compile-time by the compiler.
+- **UNCHECKED EXCEPTIONS**: The unchecked exceptions are just opposite to the checked exceptions. The compiler will not
+  check these exceptions at compile time. In simple words, if a program throws an unchecked exception, and even if we
+  didn’t handle or declare it, the program would not give a compilation error.
+
+
+1. **Checked exceptions**: *CHECKED EXCEPTIONS*
+    - These are exceptional conditions that a well-written application **should anticipate and recover from**.
+2. **Errors**: *UNCHECKED EXCEPTIONS*
+    - These are exceptional conditions that are external to the application, and that **the application usually cannot
+      anticipate or recover from**.
+3. **Runtime exceptions**: *UNCHECKED EXCEPTIONS*
+    - These are exceptional conditions that are internal to the application, and that **the application usually cannot
+      anticipate or recover from**.
+
+![img_50.png](img_50.png)
+
+The first step in constructing an exception handler is to enclose the code that might throw an exception within a try
+block. In general, a try block looks like the following:
+
+```java
+try{
+// The segment in the example labeled code contains one or more legal lines of code that could throw an exception.
+        }catch(Exception exception){
+        // Each catch block is an exception handler that handles the type of exception indicated by its argument. 
+        }catch(
+Exception exception){
+        // The catch block contains code that is executed if and when the exception handler is invoked.
+        }finally{
+        // The finally block always executes when the try block exits.
+        // This ensures that the finally block is executed even if an unexpected exception occurs.
+        }
+```
 
 ### Architecture
 
