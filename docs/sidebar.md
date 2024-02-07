@@ -8,3 +8,4 @@
         * [4.1 Enterprise general](docs/advance/module_advanced_enterprise_general.md)
         * [4.2 Enterprise with Java](docs/advance/module_advanced_enterprise_java.md)
         * [4.3 Database](docs/advance/module_advanced_data.md)
+    * [**5. Test Automation module**](docs/advance/module_advanced_test_automation.md)
