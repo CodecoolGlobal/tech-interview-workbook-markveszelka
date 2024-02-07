@@ -76,15 +76,15 @@ details: https://farhan-labib.medium.com/the-confusion-error-vs-fault-vs-bug-vs-
 
 ![img_38.png](img_38.png)
 
-1. **Testing shows the presence of defects, not their absence** \
+1. **Testing shows the presence of defects, not their absence** *“We can never say that our system is defect free”* \
    Testing can show that defects are present, but cannot prove that there are no defects. Testing reduces the
    probability of undiscovered defects remaining in the software but, even if no defects are found, testing is not a
    proof of correctness.
-2. **Exhaustive testing is impossible** \
+2. **Exhaustive testing is impossible** *“Impossible to test everything”* \
    Testing everything (all combinations of inputs and preconditions) is not feasible except for trivial cases. Rather
    than attempting to test exhaustively, risk analysis, test techniques, and priorities should be used to focus test
    efforts.
-3. **Early testing saves time and money** \
+3. **Early testing saves time and money** *“We can talk about the Effectiveness of testing”* \
    To find defects early, both static and dynamic test activities should be started as early as possible in the software
    development lifecycle. Early testing is sometimes referred to as a shift left. Testing early in the software
    development lifecycle helps reduce or eliminate costly changes (see section 3.1).
@@ -110,6 +110,8 @@ details: https://farhan-labib.medium.com/the-confusion-error-vs-fault-vs-bug-vs-
    testing all specified requirements and fixing all defects found could still produce a system that is difficult to
    use, that does not fulfill the users’ needs and expectations, or that is inferior compared to other competing
    systems.
+
+See more details: https://medium.com/@ruwanthiranasinghe1996/7-principles-of-software-testing-25ba867f75ea
 
 #### What is unit testing? Who is responsible for write unit tests?
 
