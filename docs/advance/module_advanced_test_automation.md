@@ -88,22 +88,22 @@ details: https://farhan-labib.medium.com/the-confusion-error-vs-fault-vs-bug-vs-
    To find defects early, both static and dynamic test activities should be started as early as possible in the software
    development lifecycle. Early testing is sometimes referred to as a shift left. Testing early in the software
    development lifecycle helps reduce or eliminate costly changes (see section 3.1).
-4. **Defects cluster together** \
+4. **Defects cluster together** *“Small number of modules contain most of the defects”* \
    A small number of modules usually contains most of the defects discovered during pre-release testing, or is
    responsible for most of the operational failures. Predicted defect clusters, and the actual observed defect clusters
    in test or operation, are an important input into a risk analysis used to focus the test effort (as mentioned in
    principle 2).
-5. **Beware of the pesticide paradox** \
+5. **Beware of the pesticide paradox** *“To detect more defects, we need to change the test data”* \
    If the same tests are repeated over and over again, eventually these tests no longer find any new defects. To detect
    new defects, existing tests and test data may need changing, and new tests may need to be written. (Tests are no
    longer effective at finding defects, just as pesticides are no longer effective at killing insects after a while.) In
    some cases, such as automated regression testing, the pesticide paradox has a beneficial outcome, which is the
    relatively low number of regression defects.
-6. **Testing is context dependent** \
+6. **Testing is context dependent** *“Tests are done differently in a different context”* \
    Testing is done differently in different contexts. For example, safety-critical industrial control software is tested
    differently from an e-commerce mobile app. As another example, testing in an Agile project is done differently than
    testing in a sequential software development lifecycle project (see section 2.1).
-7. **Absence-of-errors is a fallacy** \
+7. **Absence-of-errors is a fallacy** *“Focus on the business need”* \
    Some organizations expect that testers can run all possible tests and find all possible defects, but principles 2 and
    1, respectively, tell us that this is impossible. Further, it is a fallacy (i.e., a mistaken belief) to expect that
    just finding and fixing a large number of defects will ensure the success of a system. For example, thoroughly
@@ -117,9 +117,192 @@ See more details: https://medium.com/@ruwanthiranasinghe1996/7-principles-of-sof
 
 #### What are Test Levels, what is the difference between them?
 
+**Test levels are groups of test activities that are organized and managed together.**
+
+**`Test levels:`**
+
+- Component (Unit or Module) testing
+- Integration testing
+- System testing
+- Acceptance testing
+
+**`Test levels are characterized by the following attributes:`**
+
+- Specific objectives
+- Test basis, referenced to derive test cases
+- Test object (i.e., what is being tested)
+- Typical defects and failures
+- Specific approaches and responsibilities
+
+<div style="text-align:left;">
+<img src="/docs/advance/img_39.png" data-origin="img_39.png" alt="img_39.png" style="width:40%;">
+</div>
+
+1. **`Component Testing:`**
+    - *Component testing (also known as unit or module testing) focuses on components that are separately testable.*
+    - **Objectives of component testing:**
+        - Reducing risk
+        - Verifying whether the functional and non-functional behaviors of the component are as designed
+          and specified
+        - Building confidence in the component’s quality
+        - Finding defects in the component
+        - Preventing defects from escaping to higher test levels
+    - **Test basis:**
+        - Detailed design
+        - Code
+        - Data model
+        - Component specifications
+    - **Test objects:**
+        - Components, units or modules
+        - Code and data structures
+        - Classes
+        - Database modules
+    - **Typical defects and failures:**
+        - Incorrect functionality (e.g., not as described in design specifications)
+        - Data flow problems
+        - Incorrect code and logic
+2. **`Integration Testing:`**
+    - *Integration testing focuses on interactions between components or systems.*
+    - **Objectives of integration testing:**
+        - Reducing risk
+        - Verifying whether the functional and non-functional behaviors of the interfaces are as designed
+          and specified
+        - Building confidence in the quality of the interfaces
+        - Finding defects (which may be in the interfaces themselves or within the components or systems)
+        - Preventing defects from escaping to higher test levels
+    - **Test basis:**
+        - Software and system design
+        - Sequence diagrams
+        - Interface and communication protocol specifications
+        - Use cases
+        - Architecture at component or system level
+        - Workflows
+        - External interface definitions
+    - **Test objects:**
+        - Subsystems
+        - Databases
+        - Infrastructure
+        - Interfaces
+        - APIs
+        - Microservices
+    - **Typical defects and failures:**
+        - Incorrect data, missing data, or incorrect data encoding
+        - Incorrect sequencing or timing of interface calls
+        - Interface mismatch
+        - Failures in communication between components
+        - Unhandled or improperly handled communication failures between components
+        - Incorrect assumptions about the meaning, units, or boundaries of the data being passed between components
+        - Failure to comply with mandatory security regulations
+3. **`System Testing:`**
+    - *System testing focuses on the behavior and capabilities of a whole system or product, often considering the
+      end-to-end tasks the system can perform and the non-functional behaviors it exhibits while performing those
+      tasks.*
+    - **Objectives of system testing:**
+        - Reducing risk
+        - Verifying whether the functional and non-functional behaviors of the system are as designed and
+          specified
+        - Validating that the system is complete and will work as expected
+        - Building confidence in the quality of the system as a whole
+        - Finding defects
+        - Preventing defects from escaping to higher test levels or production
+    - **Test basis:**
+        - System and software requirement specifications (functional and non-functional)
+        - Risk analysis reports
+        - Use cases
+        - Epics and user stories
+        - Models of system behavior
+        - State diagrams
+        - System and user manuals
+    - **Test objects:**
+        - Applications
+        - Hardware/software systems
+        - Operating systems
+        - System under test (SUT)
+        - System configuration and configuration data
+    - **Typical defects and failures:**
+        - Incorrect calculations
+        - Incorrect or unexpected system functional or non-functional behavior
+        - Incorrect control and/or data flows within the system
+        - Failure to properly and completely carry out end-to-end functional tasks
+        - Failure of the system to work properly in the system environment(s)
+        - Failure of the system to work as described in system and user manuals
+4. **`Acceptance Testing:`**
+    - *Acceptance testing, like system testing, typically focuses on the behavior and capabilities of a whole system or
+      product.*
+    - **Objectives of acceptance testing:**
+        - Establishing confidence in the quality of the system as a whole
+        - Validating that the system is complete and will work as expected
+        - Verifying that functional and non-functional behaviors of the system are as specified
+    - **Test basis:**
+        - Business processes
+        - User or business requirements
+        - Regulations, legal contracts and standards
+        - Use cases and/or user stories
+        - System requirements
+        - System or user documentation
+        - Installation procedures
+        - Risk analysis reports
+        - Backup and restore procedures
+        - Disaster recovery procedures
+        - Non-functional requirements
+        - Operations documentation
+        - Deployment and installation instructions
+        - Performance targets
+        - Database packages
+        - Security standards or regulations
+    - **Test objects:**
+        - System under test
+        - System configuration and configuration data
+        - Business processes for a fully integrated system
+        - Recovery systems and hot sites (for business continuity and disaster recovery testing)
+        - Operational and maintenance processes
+        - Forms
+        - Reports
+        - Existing and converted production data
+    - **Typical defects and failures:**
+        - System workflows do not meet business or user requirements
+        - Business rules are not implemented correctly
+        - System does not satisfy contractual or regulatory requirements
+        - Non-functional failures such as security vulnerabilities, inadequate performance efficiency under high
+          loads, or improper operation on a supported platform
+    - **Common forms of acceptance testing:**
+        - **User acceptance testing (UAT)**
+        - **Operational acceptance testing (OAT)**
+        - **Contractual and regulatory acceptance testing**
+        - **Alpha and beta testing**
+
+See more simply: https://medium.com/@sultankocaman/levels-of-testing-b199408f5bf0
+
 #### What is the difference between verification and validation?
 
 #### What are Testing Types, what is the difference between them?
+
+**A test type is a group of test activities aimed at testing specific characteristics of a software system, or a part of
+a
+system, based on specific test objectives.**
+
+1. **`Functional Testing:`**
+    - Functional testing of a system involves tests that evaluate functions that the system should perform.
+    - The functions are “what” the system should do.
+    - Functional tests should be performed at all test levels.
+    - Functional testing considers the behavior of the software, so black-box techniques may be used to derive test
+      conditions and test cases for the functionality of the component or system.
+    - The thoroughness of functional testing can be measured through functional coverage.
+2. **`Non-functional Testing:`**
+    - Non-functional testing of a system evaluates characteristics of systems and software such as usability,
+      performance efficiency or security.
+    - Non-functional testing is the testing of “how well” the system behaves.
+    - Non-functional testing can and often should be performed at all test levels, and done as early as possible.
+    - Black-box techniques may be used to derive test conditions and test cases for non-functional testing.
+    - It Can be measured through non-functional coverage.
+    - Non-functional test design and execution may involve special skills or knowledge. (e.g., Sec. vulnerabilities)
+3. **`White-box Testing:`**
+    - White-box testing derives tests based on the system’s internal structure or implementation.
+    - The thoroughness of white-box testing can be measured through structural coverage.
+    - White-box test design and execution may involve special skills or knowledge (e.g., How code built, How data is
+      stored)
+4. **`Change-related Testing:`**
+    - When changes are made to a system, testing should be done to confirm that the functionality is still correct.
 
 #### What is the difference between white box, grey boy and black box testing?
 
@@ -131,7 +314,20 @@ See more details: https://medium.com/@ruwanthiranasinghe1996/7-principles-of-sof
 
 #### What is the difference between Static and Dynamic Testing?
 
-#### Compare V-modell, Waterfall, Agile from testing perspective!
+#### Compare V-model, Waterfall, Agile from testing perspective!
+
+1. **V-model:** \
+   integrates the test process throughout the development process, implementing the principle of early testing.
+   In this model, the execution of tests associated with all test level proceeds sequentially, but in some cases
+   overlapping occurs.
+2. **Waterfall:** \
+   the development activities (e.g., requirements analysis, design, coding, testing) are completed one after
+   another.
+   In this model, test activities only occur after all other development activities have been completed.
+3. **Agile:** \
+   This methodology emphasizes iterative development and collaboration between cross-functional teams.
+   Testing in Agile is continuous and integrated throughout the development lifecycle, with frequent feedback loops
+   and adaptation to changes.
 
 #### What would you test in case of a simple webshop purchasing function (put items to cart, buy them)? Plan and reason your tests.
 
