@@ -2,7 +2,7 @@
 
 ### Testing Basics (ISTQB related)
 
-#### What is the purpose of testing? What is not?
+#### What is the `purpose of testing`? What is not?
 
 **Software testing is a way to assess the quality of the software and to reduce the risk of software failure in
 operation.**
@@ -48,7 +48,7 @@ operational environment(s).
 - To comply with contractual, legal, or regulatory requirements or standards, and/or to verify the test object’s
   compliance with such requirements or standards
 
-#### What is the difference between Defect, Error, Failure?
+#### What is the difference between `Defect, Error, Failure`?
 
 <div style="text-align:center;">
 <img src="/docs/advance/error_defect_failure.gif" data-origin="error_defect_failure.gif" alt="error_defect_failure.gif" style="width:40%;">
@@ -72,7 +72,7 @@ details: https://farhan-labib.medium.com/the-confusion-error-vs-fault-vs-bug-vs-
   interactions are large
 - New, unfamiliar technologies
 
-#### What are the testing principles?
+#### What are the `seven testing principles`?
 
 ![img_38.png](img_38.png)
 
@@ -113,9 +113,9 @@ details: https://farhan-labib.medium.com/the-confusion-error-vs-fault-vs-bug-vs-
 
 See more details: https://medium.com/@ruwanthiranasinghe1996/7-principles-of-software-testing-25ba867f75ea
 
-#### What is unit testing? Who is responsible for write unit tests?
+#### What is `unit testing`? Who is responsible for write unit tests?
 
-#### What are Test Levels, what is the difference between them?
+#### What are `Test Levels`, what is the difference between them?
 
 **Test levels are groups of test activities that are organized and managed together.**
 
@@ -273,9 +273,9 @@ See more details: https://medium.com/@ruwanthiranasinghe1996/7-principles-of-sof
 
 See more simply: https://medium.com/@sultankocaman/levels-of-testing-b199408f5bf0
 
-#### What is the difference between verification and validation?
+#### What is the difference between `verification and validation`?
 
-#### What are Testing Types, what is the difference between them?
+#### What are `Testing Types`, what is the difference between them?
 
 **A test type is a group of test activities aimed at testing specific characteristics of a software system, or a part of
 a
@@ -303,28 +303,111 @@ system, based on specific test objectives.**
       stored)
 4. **`Change-related Testing:`**
     - When changes are made to a system, testing should be done to confirm that the functionality is still correct.
+        - Confirmation testing: The purpose of a confirmation test is to confirm whether the original defect has been
+          successfully fixed.
+        - Regression testing: Changes may include changes to the environment, such as a new version of an operating
+          system or database management system. Such unintended side effects are called regressions. Regression testing
+          involves running tests to detect such unintended side effects.
+    - Confirmation testing and regression testing are performed at all test levels.
+    - Automation of these tests should start early in the project.
 
-#### What is the difference between white box, grey boy and black box testing?
+#### What is the difference between `white box, gray box and black box testing`?
 
-#### What is the difference between UAT (User Acceptance Testing) and System testing?
+1. **Black-box testing:** \
+   Black-box test techniques (also called behavioral or behavior-based techniques) are based on an analysis of the
+   appropriate test basis (e.g., formal requirements documents, specifications, use cases, user stories, or business
+   processes).
+    - Test conditions, test cases, and test data are derived from a test basis that may include software requirements,
+      specifications, use cases, and user stories
+    - Test cases may be used to detect gaps between the requirements and the implementation of the requirements, as well
+      as deviations from the requirements
+    - Coverage is measured based on the items tested on the test basis and the technique applied to the test basis
 
-#### Mention the differences between Regression Testing, Smoke Testing and Retesting?
+2. **White-box testing:** \
+   White-box test techniques (also called structural or structure-based techniques) are based on an analysis of the
+   architecture, detailed design, internal structure, or the code of the test object.
+    - Test conditions, test cases, and test data are derived from a test basis that may include code, software
+      architecture, detailed design, or any other source of information regarding the structure of the software
+    - Coverage is measured based on the items tested within a selected structure (e.g., the code or interfaces) and the
+      technique applied to the test basis
+3. **Gray-box testing:** \
+   Experience-based test techniques leverage the experience of developers, testers and users to design, implement, and
+   execute tests.
+    - Test conditions, test cases, and test data are derived from a test basis that may include knowledge and experience
+      of testers, developers, users and other stakeholders
 
-#### What is risk-based testing, what's the point of it?
+#### What is the difference between `UAT (User Acceptance Testing) and System testing`?
 
-#### What is the difference between Static and Dynamic Testing?
+1. **`System Testing:`**
+    - System testing is like checking if all the parts of a toy work well together before giving it to a child.
+    - It tests the entire system or software application to ensure that it meets the specified requirements and
+      functions correctly as a whole.
+    - Testers simulate real-world scenarios to validate different features and functionalities of the system.
+    - System testing is usually done by testers or quality assurance teams before the software is released to users.
+2. **`User Acceptance Testing (UAT):`**
+    - UAT is like asking the child if they like the toy and if it works the way they want it to.
+    - It involves testing the software from the perspective of the end users to ensure that it meets their expectations
+      and requirements.
+    - Users, or representatives of the users, perform UAT to validate that the software fulfills their needs and is easy
+      to use.
+    - UAT focuses on user satisfaction, usability, and whether the software meets business objectives.
+    - UAT typically occurs towards the end of the development process, after system testing, and before the software is
+      deployed to production.
 
-#### Compare V-model, Waterfall, Agile from testing perspective!
+#### Mention the differences between `Regression Testing, Smoke Testing and Retesting`?
 
-1. **V-model:** \
+#### What is `risk-based testing`, what's the point of it?
+
+**A risk-based approach to testing provides proactive opportunities to reduce the levels of product risk.**
+It involves product **risk analysis**, which includes the identification of product risks and the assessment of each
+risk’s likelihood and impact.
+
+Risk-based testing draws on the collective knowledge and insight of the project stakeholders to carry out product risk
+analysis.
+To ensure that the likelihood of a product failure is minimized, risk management activities provide a
+**disciplined approach** to:
+
+- **Analyze** (and re-evaluate on a regular basis) what can go wrong (risks)
+- **Determine** which risks are important to deal with
+- **Implement actions** to mitigate those risks
+- **Make contingency plans** to deal with the risks should they become actual events
+
+#### What is the difference between `Static and Dynamic Testing`?
+
+Static testing and dynamic testing can have the same objectives (see section 1.1.1), such as providing an assessment of
+the quality of the work products and identifying defects as early as possible.
+**Static and dynamic testing complement each other by finding different types of defects.**
+
+- Static testing finds defects in work products directly rather than identifying failures caused by defects when the
+  software is run.
+- static testing can be used to improve the consistency and internal quality of work products, while dynamic testing
+  typically focuses on externally visible behaviors.
+
+**Compared with dynamic testing, typical defects that are easier and cheaper to find and fix through static testing
+include:**
+
+- Requirement defects (e.g., inconsistencies, ambiguities, contradictions, omissions, inaccuracies, and redundancies)
+- Design defects (e.g., inefficient algorithms or database structures, high coupling, low cohesion)
+- Coding defects (e.g., variables with undefined values, variables that are declared but never used,
+  unreachable code, duplicate code)
+- Deviations from standards (e.g., lack of adherence to coding standards)
+- Incorrect interface specifications (e.g., different units of measurement used by the calling system than by the called
+  system)
+- Security vulnerabilities (e.g., susceptibility to buffer overflows)
+- Gaps or inaccuracies in test basis traceability or coverage (e.g., missing tests for an acceptance
+  criterion)
+
+#### Compare `V-model, Waterfall, Agile` from testing perspective!
+
+1. **`V-model:`** \
    integrates the test process throughout the development process, implementing the principle of early testing.
    In this model, the execution of tests associated with all test level proceeds sequentially, but in some cases
    overlapping occurs.
-2. **Waterfall:** \
+2. **`Waterfall:`** \
    the development activities (e.g., requirements analysis, design, coding, testing) are completed one after
    another.
    In this model, test activities only occur after all other development activities have been completed.
-3. **Agile:** \
+3. **`Agile:`** \
    This methodology emphasizes iterative development and collaboration between cross-functional teams.
    Testing in Agile is continuous and integrated throughout the development lifecycle, with frequent feedback loops
    and adaptation to changes.
