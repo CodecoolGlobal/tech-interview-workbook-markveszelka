@@ -435,6 +435,54 @@ The `Map` interface is a fundamental interface in the `Java Collections Framewor
 `Collection` interface, which deals with individual elements, the `'Map' interface works with key-value pairs`, and
 `does not support iteration` on its elements directly using iterators!
 
+#### What is `HashMap` in Java, and how does it work?
+
+```java 
+ HashMap<K, V> hashMap = new HashMap<>()
+ ```
+
+**`General info:`**
+
+- HashMap is a **data structure** that **implements the Map interface**.
+- HashMap in Java stores the data **Key-Value pairs**.
+- **Cannot be duplicated keys**.
+- HashMap is an **unsorted** collection.
+- Time complexity to **insert** and **retrieve** a value is **O(1)**.
+- We can use any class as the **key** in our HashMap. However, for the map to work properly, we need to provide an
+  **implementation for equals() and hashCode()**.
+
+**`Implementation:`**
+
+- The implementation is **based on the the principles of a hashtable**
+- Hash maps store both key and value in the bucket location as a Map.Entry object.
+
+1. When a value is added to the map under a key, the **hashCode()** API of the key object is called to retrieve what is
+   known as the initial hash value.
+2. Next, the **hash()** API of the hash map is called internally to **compute the final hash value** using the initial
+   hash value. This final hash value ultimately **boils down to an index in the internal array** or what we call a
+   **bucket** location.
+3. A **collision**, or more specifically, a hash code collision in a HashMap, is a situation where two or more key
+   objects produce the same final hash value and hence **point to the same bucket location or array index**.
+   This scenario can occur because, according to the equals, and hashCode contract, two unequal objects in Java can have
+   the same hash code.
+4. Keep in mind that it’s the hash value of the key that determines the bucket the object will be stored in. And so, if
+   the hash codes of any two keys **collide**, their entries will still be stored in the same bucket.
+   And by default, the implementation uses a **linked list** as the bucket implementation.
+
+**`Collision handling:`** \
+Two basic methods are used to handle collisions:
+
+1. Seperate chaning
+2. Open Addressing
+
+**`Picture:`** **Seperate chaning**, using a **linked list's** head for each bucket element:
+![img_51.png](img_51.png)
+
+See more general info: https://www.baeldung.com/java-hashmap \
+See more about the working, hashing: https://www.baeldung.com/java-hashmap-advanced \
+See more on implementation: https://pramodshehan.medium.com/hashmap-implementation-d79c01881339 \
+See video: https://www.youtube.com/watch?v=KyUTuwz_b7Q
+
 #### Compare `sets`, `lists`, and `queues` in Java.
 
 - `Sets`:\
