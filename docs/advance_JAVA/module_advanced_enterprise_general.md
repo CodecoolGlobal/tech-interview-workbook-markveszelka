@@ -18,7 +18,7 @@ Business Logic, and Data Access layers.
 - Data Access Layer (Persistence Layer)
 
 <div style="text-align:center;">
-<img src="/docs/advance/1699655015511.gif" data-origin="1699655015511.gif" alt="1699655015511.gif" style="width:50%;">
+<img src="/docs/advance_JAVA/1699655015511.gif" data-origin="1699655015511.gif" alt="1699655015511.gif" style="width:50%;">
 </div>
 
 #### What are `microservices`? Advantages and disadvantages?
@@ -37,7 +37,7 @@ Each service is independently deployable and scalable.
     - `Network Overhead`: Due to inter service communication.
 
 <div style="text-align:center;">
-<img src="/docs/advance/img_6.png" data-origin="img6.png" alt="img6.png" style="width:50%;">
+<img src="/docs/advance_JAVA/img_6.png" data-origin="img6.png" alt="img6.png" style="width:50%;">
 </div>
 
 #### What is `Separation of Concerns`?
@@ -182,7 +182,7 @@ easier maintenance, and reduction in the number of bugs.
 a day. CI is crucial to detect errors quickly and ensure that the mainline is always in a state ready for deployment.
 
 <div style="text-align:center;">
-<img src="/docs/advance/img_10.png" data-origin="img_10.png" alt="img_10.png" style="width:70%;">
+<img src="/docs/advance_JAVA/img_10.png" data-origin="img_10.png" alt="img_10.png" style="width:70%;">
 </div>
 
 #### Why are `tests` important `in the CI workflow`?
@@ -217,7 +217,7 @@ Waterfall, V-Model, Incremental, Spiral, Agile, and DevOps are different softwar
 approach to software development.
 
 <div style="text-align:center;">
-<img src="/docs/advance/img_11.png" data-origin="img_11.png" alt="img_11.png" style="width:50%;">
+<img src="/docs/advance_JAVA/img_11.png" data-origin="img_11.png" alt="img_11.png" style="width:50%;">
 </div>
 
 #### What is a `UML diagram`? What kind of diagram types do you know?
@@ -231,7 +231,7 @@ A UML class diagram represents the static structure of a system, showing the sys
 and relationships. Typical elements include Classes, Interfaces, and Associations.
 
 <div style="text-align:center;">
-<img src="/docs/advance/img_12.png" data-origin="img_12.png" alt="img_12.png" style="width:60%;">
+<img src="/docs/advance_JAVA/img_12.png" data-origin="img_12.png" alt="img_12.png" style="width:60%;">
 </div>
 
 #### What kind of `design patterns` do you know? Bring at least 3 examples.
@@ -246,7 +246,7 @@ Iterator Pattern provides a way to access the elements of an aggregate object se
 underlying representation, promoting a cleaner API and encapsulation of the internal structure.
 
 <div style="text-align:center;">
-<img src="/docs/advance/img_35.png" data-origin="img_35.png" alt="img_35.png" style="width:50%;">
+<img src="/docs/advance_JAVA/img_35.png" data-origin="img_35.png" alt="img_35.png" style="width:50%;">
 </div>
 
 #### What do you know about the `SOLID principles`?
@@ -266,7 +266,7 @@ the `Service pattern`to handle business logic. This promotes `Separation of Conc
 to maintain and test.
 
 <div style="text-align:center;">
-<img src="/docs/advance/img_13.png" data-origin="img_13.png" alt="img_13.png" style="width:50%;">
+<img src="/docs/advance_JAVA/img_13.png" data-origin="img_13.png" alt="img_13.png" style="width:50%;">
 </div>
 
 ## Computer science
@@ -281,7 +281,7 @@ Both are linear data structures.
   the list. In `Stack` `elements can be inserted and deleted only from one side` of the list, called the `top`.
 
 <div>
-<img src="/docs/advance/img_14.png" data-origin="img_14.png" alt="img_14.png" style="width:30%;">
+<img src="/docs/advance_JAVA/img_14.png" data-origin="img_14.png" alt="img_14.png" style="width:30%;">
 </div>
 
 - `Queue`: A `FIFO (First In First Out)` structure. The element inserted at the first, is the first element to come out
@@ -289,13 +289,13 @@ Both are linear data structures.
   be deleted only from the other side called the front`.
 
 <div>
-<img src="/docs/advance/img_15.png" data-origin="img_15.png" alt="img_15.png" style="width:30%;">
+<img src="/docs/advance_JAVA/img_15.png" data-origin="img_15.png" alt="img_15.png" style="width:30%;">
 </div>
 
 #### What is a `GRAPH`? What are simple graphs? What are directed graphs? What are weighted graphs?
 
 <div>
-<img src="/docs/advance/img_21.png" data-origin="img_21.png" alt="img_21.png" style="width:20%;">
+<img src="/docs/advance_JAVA/img_21.png" data-origin="img_21.png" alt="img_21.png" style="width:20%;">
 </div>
 
 - `Graph`: `A collection of NODES and EDGES`.\
@@ -312,13 +312,13 @@ Both are linear data structures.
 - `Trees`: A hierarchical data structure with a root element and a collection of child elements.
 
 <div>
-<img src="/docs/advance/img_23.png" data-origin="img_23.png" alt="img_23.png" style="width:30%;">
+<img src="/docs/advance_JAVA/img_23.png" data-origin="img_23.png" alt="img_23.png" style="width:30%;">
 </div>
 
 - `Binary Trees`: A tree where each node has at most two children: left and right.
 
 <div>
-<img src="/docs/advance/img_22.png" data-origin="img_22.png" alt="img_22.png" style="width:30%;">
+<img src="/docs/advance_JAVA/img_22.png" data-origin="img_22.png" alt="img_22.png" style="width:30%;">
 </div>
 
 - `Binary Search Trees (BST)`:
@@ -350,14 +350,14 @@ Graph traversal algorithms are techniques used to explore all vertices of a grap
   next depth level. Uses a `queue` to achieve this.
 
 <div>
-<img src="/docs/advance/Animated_BFS.gif" data-origin="Animated_BFS.gif" alt="Animated_BFS.gif">
+<img src="/docs/advance_JAVA/Animated_BFS.gif" data-origin="Animated_BFS.gif" alt="Animated_BFS.gif">
 </div>
 
 - `DFS (Depth-First Search)`: Explores as far as possible along each branch `vertically` before backtracking. Uses a
   `stack` or `recursion to achieve this.
 
 <div>
-<img src="/docs/advance/Depth-First-Search.gif" data-origin="Depth-First-Search.gif" alt="Depth-First-Search.gif">
+<img src="/docs/advance_JAVA/Depth-First-Search.gif" data-origin="Depth-First-Search.gif" alt="Depth-First-Search.gif">
 </div>
 
 #### How does `dictionary work`?
@@ -379,7 +379,7 @@ partitioning the other elements into two sub-arrays, according to whether they a
 This process is recursively applied to sub-arrays until the array is sorted.
 
 <div>
-<img src="/docs/advance/Sorting_quicksort_anim.gif" data-origin="Sorting_quicksort_anim.gif" alt="Sorting_quicksort_anim.gif">
+<img src="/docs/advance_JAVA/Sorting_quicksort_anim.gif" data-origin="Sorting_quicksort_anim.gif" alt="Sorting_quicksort_anim.gif">
 </div>
 
 ## Software design
@@ -393,10 +393,10 @@ service. It provides a way for users to grant third-party applications access to
 credentials.
 
 <div style="text-align:center;">
-<img src="/docs/advance/img_33.png" data-origin="img_33.png" alt="img_33.png" style="width: 60%;">
+<img src="/docs/advance_JAVA/img_33.png" data-origin="img_33.png" alt="img_33.png" style="width: 60%;">
 </div>
 <div style="text-align:center;">
-<img src="/docs/advance/img_32.png" data-origin="img_32.png" alt="img_32.png" style="width: 50%;">
+<img src="/docs/advance_JAVA/img_32.png" data-origin="img_32.png" alt="img_32.png" style="width: 50%;">
 </div>
 
 #### What is `Basic Authentication`?
@@ -421,7 +421,7 @@ to a target site where the victim is authenticated, typically through social eng
 malicious link via email or embedding it in a website.
 
 <div style="text-align:center;">
-<img src="/docs/advance/img_29.png" data-origin="img_29.png" alt="img_29.png" style="width: 70%;">
+<img src="/docs/advance_JAVA/img_29.png" data-origin="img_29.png" alt="img_29.png" style="width: 70%;">
 </div>
 
 #### What is `JWT` used for? Where to store it on client side?
@@ -432,8 +432,8 @@ localStorage, or sessionStorage, with cookies being the recommended option due t
 and Secure flags.
 
 <div style="text-align:center; display:flex; justify-content:space-around;">
-    <img src="/docs/advance/img_28.png" data-origin="img_28.png" alt="img_28.png" style="max-width: 550px;">
-    <img src="/docs/advance/1699833577908.gif" data-origin="1699833577908.gif" alt="1699833577908.gif" style="max-width: 550px;">
+    <img src="/docs/advance_JAVA/img_28.png" data-origin="img_28.png" alt="img_28.png" style="max-width: 550px;">
+    <img src="/docs/advance_JAVA/1699833577908.gif" data-origin="1699833577908.gif" alt="1699833577908.gif" style="max-width: 550px;">
 </div>
 
 ### Threaded programming

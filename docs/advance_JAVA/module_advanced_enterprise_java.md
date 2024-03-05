@@ -137,7 +137,7 @@ public class MyRestController {
 ```
 
 <div style="text-align:center;">
-<img src="/docs/advance/img.png" data-origin="img.png" alt="img.png" style="width:60%;">
+<img src="/docs/advance_JAVA/img.png" data-origin="img.png" alt="img.png" style="width:60%;">
 </div>
 
 #### What is `Spring Application Context` ?
@@ -284,7 +284,7 @@ suitable for every project. Careful consideration of the project requirements an
 whether to use Hibernate.
 
 <div style="text-align:center;">
-<img src="/docs/advance/img_4.png" alt="img_2.png" style="width:50%;">
+<img src="/docs/advance_JAVA/img_4.png" alt="img_2.png" style="width:50%;">
 </div>
 
 #### Name 3 different `annotations used in JPA`, what can they do for you ?

@@ -51,7 +51,7 @@ operational environment(s).
 #### What is the difference between `Defect, Error, Failure`?
 
 <div style="text-align:center;">
-<img src="/docs/advance/error_defect_failure.gif" data-origin="error_defect_failure.gif" alt="error_defect_failure.gif" style="width:40%;">
+<img src="/docs/test_automation/error_defect_failure.gif" data-origin="error_defect_failure.gif" alt="error_defect_failure.gif" style="width:40%;">
 </div>
 
 1. **Error**: A `mistake in coding` is called an `Error`.
@@ -135,7 +135,7 @@ See more details: https://medium.com/@ruwanthiranasinghe1996/7-principles-of-sof
 - Specific approaches and responsibilities
 
 <div style="text-align:left;">
-<img src="/docs/advance/img_39.png" data-origin="img_39.png" alt="img_39.png" style="width:40%;">
+<img src="/docs/test_automation/img_39.png" data-origin="img_39.png" alt="img_39.png" style="width:40%;">
 </div>
 
 1. **`Component Testing:`**
