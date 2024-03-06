@@ -8,8 +8,7 @@
 operation.**
 \
 A **common misperception of testing is that it only consists of running tests**, i.e., executing the software and
-checking
-the results.
+checking the results. 
 But test execution is only one from the many testing activities.
 
 **The test process also includes activities such as**:
