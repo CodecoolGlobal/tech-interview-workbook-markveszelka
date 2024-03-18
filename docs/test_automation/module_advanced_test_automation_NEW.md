@@ -114,7 +114,35 @@ and provides value to its users.
 
 #### What is `unit testing`? Who is responsible for write unit tests?
 
+Component testing (also known as unit testing) focuses on testing components in isolation. It
+often requires specific support, such as test harnesses or unit test frameworks. Component
+testing is normally performed by developers in their development environments.
+
 #### What is the difference between `white box`, `gray box` and `black box` testing?
+
+1. **`Black-box testing`:** \
+   Black-box test techniques (also called behavioral or behavior-based techniques) are based on an analysis of the
+   appropriate test basis (e.g., formal requirements documents, specifications, use cases, user stories, or business
+   processes).
+    - Test conditions, test cases, and test data are derived from a test basis that may include software requirements,
+      specifications, use cases, and user stories
+    - Test cases may be used to detect gaps between the requirements and the implementation of the requirements, as well
+      as deviations from the requirements
+    - Coverage is measured based on the items tested on the test basis and the technique applied to the test basis
+
+2. **`White-box testing`:** \
+   White-box test techniques (also called structural or structure-based techniques) are based on an analysis of the
+   architecture, detailed design, internal structure, or the code of the test object.
+    - Test conditions, test cases, and test data are derived from a test basis that may include code, software
+      architecture, detailed design, or any other source of information regarding the structure of the software
+    - Coverage is measured based on the items tested within a selected structure (e.g., the code or interfaces) and the
+      technique applied to the test basis
+
+3. **`Gray-box testing`:** \
+   Experience-based test techniques leverage the experience of developers, testers and users to design, implement, and
+   execute tests.
+    - Test conditions, test cases, and test data are derived from a test basis that may include knowledge and experience
+      of testers, developers, users and other stakeholders
 
 #### Compare the `Waterfall` and `Agile` project management models from testing perspective!
 
@@ -131,7 +159,17 @@ and provides value to its users.
 - Quickly adapt to changing project requirements
 - Continuous testing throughout the development process
 
-#### Communication skills are important for a test engineer. Why is that? Give an example of a possible scenario where a tester needs to use their communication skills.
+#### `Communication skills` are important for a test engineer. Why is that? Give an example of a possible scenario where a tester needs to use their communication skills.
+
+- `Clarifying Requirements`: Test engineers need to communicate effectively, to understand the requirements and
+  expectations for the software being developed
+- `Reporting Bugs`: Test engineers must effectively communicate any issues or defects they encounter during testing
+- `Collaborating with Team Members`: Test engineers often work as part of a multidisciplinary team, collaborating with
+  developers, designers, and other stakeholders throughout the software development lifecycle
+- `Providing Feedback`: Test engineers provide valuable feedback to developers and project stakeholders based on their
+  testing activities.
+- `Explaining Test Results`: Test engineers need to communicate test results to project stakeholders, including managers
+  and clients.
 
 ## Testing Methods
 
@@ -141,19 +179,39 @@ and provides value to its users.
 
 #### What is `POM` and why is it useful?
 
-#### What is `keyword-driven` testing and why is it useful?
+#### What is `keyword-driven testing` and why is it useful?
+
+Keyword Driven Testing is a scripting technique that uses data files to contain the keywords related to the application
+being tested. These keywords describe the set of actions that is required to perform a specific step.
+
+in KDT we create actions, which represent a smaller action or function on the tested page, and we can reuse these
+actions (they can be methods in Java eg.). It helps code reusability, and they can have descriptive names, starting with
+action verbs, so can be used easily by less educated testers/users as well.
 
 #### What is `TDD` and why is it useful?
 
+In test-driven development, we write the tests about the requirements before we develop any feature. And as we
+implemented the tests, we start to develop the features.
+
 #### What is `BDD` and why is it useful?
 
+Yes, the main advantage of BDD is that it makes the development easier for the end users (stakeholders), who cannot
+write code, but through user stories and with the gherkin syntax they can provide in English (or any other) language
+that what they expect from the feature, from the program. This follows the given-when-then syntax, and the user story
+can be translated to a test using cucumber and developer knowledge, so we can provide tests, and along with that, we can
+follow TDD.
+
 #### What is `data driven testing` and why is it useful?
+
+In the data-driven approach, we provide data sets, which should be tested, and along with these data sets the tests and
+features have to be written. The data can be stored in external tables such as Excel or XML files, or internally in the
+code, using the method as a source, or other parameterized solutions.
 
 #### Describe the `test data lifecycle`!
 
 #### Imagine you are responsible for quality assurance in a project. The release date is tomorrow but running all the tests takes 3 days. What do you do or suggest?
 
-#### Imagine you are in charge of testing a REST API with 5-10 different entities. How would you go about it? Plan and reason your tests.
+#### Imagine you are in charge of testing a REST API with 5–10 different entities. How would you go about it? Plan and reason your tests.
 
 #### Imagine you are in charge of testing a small application. How would you go about it? Plan and reason your tests. Examples: webshop, banking app, online education app, social media, etc.
 
@@ -183,21 +241,39 @@ and provides value to its users.
 
 #### What are the challenges and best practices with dynamically loading web elements?
 
-#### What are the most important annotations in JUnit and what are they used for?
+#### What are the `most important annotations in JUnit` and what are they used for?
+
+- @Test
+- @ParameterizedTest
+- @BeforeEach
+- @AfterEach
 
 #### How can you provide parameters to your parameterized tests in JUnit? Which way is your favorite and why?
 
-#### How would you set up a Selenium testing project from scratch? What steps are important?
+#### How would you `set up a Selenium testing project from scratch`? What steps are important?
 
-#### What coding principles do you find important in test automation and why?
+#### What `coding principles` do you find important in test automation and why?
 
-#### What are some alternatives for Selenium? Which programming language do they rely on?
+#### What are some `alternatives for Selenium`? Which programming language do they rely on?
+
+- `Playwright`:
+    - Easy Setup and Configuration
+    - Comes with multi-browser support like Chrome, Edge, Safari, and Firefox
+    - Comes with multi-language backing like Java, C#, Python, and Javascript/Typescript
+    - It comes with the parallel browser testing capabilities
+    - Supports multiple tab/browsers
+- `Cucumber`:
+    - It helps to engage business stakeholders who can’t read code
+    - It mainly focuses on end-user experience
+    - It allows the reusing of code in tests because of the easy writing style.
+    - Easy to set up and execute
+    - Support Ruby, Java and JavaScript
 
 ## Devops
 
-#### What is CI/CD? What are some popular CI systems?
+#### What is `CI/CD`? What are some popular CI systems?
 
-#### What is Docker and why is it useful?
+#### What is `Docker` and why is it useful?
 
 #### What is Kubernetes and why is it useful?
 
