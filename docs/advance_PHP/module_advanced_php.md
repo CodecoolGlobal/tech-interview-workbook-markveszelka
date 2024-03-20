@@ -287,28 +287,97 @@ In the context of Laravel, `factories` are used to generate large amounts of dat
 ### Object-Relational Mapping
 
 #### What is an ORM? What are the benefits, when to use?
+`ORM (Object-Relational Mapping)` is a technique that connects the rich objects of an application to tables in a relational database management system. Using an ORM, you can interact with your database using your programming language rather than SQL.
 
+Benefits:
+
+ - `Abstraction`: ORM provides a high-level abstraction over low-level database interactions, allowing developers to work with objects rather than SQL queries.
+ - `Productivity`: Reduces the amount of handwritten SQL and database access code, speeding up development.
+ - `Maintainability`: Business logic and database communications are decoupled, making the codebase more maintainable.
+ - `DRY Principle`: ORM promotes reusability of the model definition, avoiding redundancy.
+ - `Data Integrity`: With ORM, you leverage the programming language's features like inheritance and data validation to ensure integrity.
+
+When to Use:
+
+ - When you need to map complex object models to a database.
+ - Rapid application development where speed is crucial.
+ - Projects where code clarity and maintainability are a priority.
 
 #### What is Eloquent? What are the advantages, limitations?
+`Eloquent` is Laravel's implementation of the Active Record ORM pattern. It allows each database table to have a corresponding "Model" which is used to interact with that table.
 
+Advantages:
+
+ - `Active Record Implementation`: Simplifies data manipulation.
+ - `Relationship Mapping`: Eloquent makes it easier to define relationships between different data models.
+ - `Elegant Syntax`: Provides a more readable code base and reduces boilerplate code.
+ - `Automatic Pagination`: Simplifies the task of implementing pagination.
+ - `Events and Observers`: Allows hooking into model lifecycle events.
+
+Limitations:
+
+ - `Learning Curve`: Understanding Active Record and Eloquent's features can be challenging for beginners.
+ - `Overhead`: For very simple queries, Eloquent can be overkill, and raw SQL might be faster.
+ - `Complex Queries`: Extremely complex SQL might need to be written in raw queries if Eloquent cannot handle it elegantly.
 
 #### What is the difference between PDO and Eloquent? Which are the advantages and disadvantages of each?
+`PDO (PHP Data Objects)`: A database access layer providing a uniform method of access to multiple databases.
 
+Advantages:
+ - Raw SQL: Offers the ability to use raw SQL for complex queries.
+ - Flexibility: Can interact with any database that has a PDO driver.
+ - Lightweight: Less overhead compared to an ORM.
+
+Disadvantages:
+ - Verbosity: More code to write for CRUD operations and managing relationships.
+ - No ORM Features: Lacks the advanced features of an ORM, like Active Record, relationship management, etc.
+
+`Eloquent`: An ORM: Offers an Active Record implementation for working with your database.
+
+Advantages:
+ - Syntax: Elegant and more readable syntax for database operations.
+ - ORM Features: Provides features like soft deletes, mutators, accessors, and relationship management.
+ - Integration: Deeply integrated with Laravel, offering a seamless development experience.
+
+Disadvantages:
+ - Overhead: Additional overhead compared to raw PDO, especially for simple queries.
+ - Complexity: Some very complex queries can be harder to express in Eloquent compared to raw SQL.
 
 #### What are migrations? Why are they important?
+`Migrations` are like version control for your database, allowing you to modify and share the application's database schema definition. They're typically paired with Laravel's schema builder to easily build the application's database schema.
 
+Importance:
+
+ - Track Changes: Maintain a history of changes to the database schema.
+ - Collaboration: Facilitate team collaboration, ensuring everyone has the same database structure.
+ - Deployment: Simplify the deployment process by ensuring that migrations can be run in different environments to create consistent database schema.
 
 #### What are seeders?
+`Seeders` in Laravel are classes that allow you to populate your database with sample or placeholder data. They are extremely useful during development and for automated testing.
 
+ - You can define how the data is generated and then populate the database with these data sets efficiently.
+ - They can be re-executed multiple times to refresh the database with the same data, which is especially useful for testing and developing.
 
 #### Name 3 aggregate methods provided by the query builder in Laravel. What can they do for you?
+`count()`: Returns the number of records in a table.
+ - Useful for determining the size of a given dataset or table.
 
+`max('column')`: Finds the maximum value in a specified column.
+ - Handy for finding high scores, maximum values, or latest dates.
+
+`sum('column')`: Calculates the total for a given column.
+ - Essential for financial calculations, statistics, or aggregating values.
 
 #### What is a Model Observer?
-
+`Model Observers` in Laravel allow you to group event listener logic for a model into a single class. These listeners respond to various lifecycle events of models, such as created, updated, deleted, etc.
+ - They are ideal for keeping your model's code clean and focusing on business logic by extracting behavioral responses to model events into their own classes.
 
 #### How would you define Eloquent Collections?
-
+`Eloquent Collections` are Laravel's custom extension of the base Illuminate support collection class. When you retrieve records from the database using Eloquent, the result is returned in an Eloquent Collection instance.
+ - Provides a plethora of helpful methods for interacting with your data set, such as transformations and value retrieval methods.
+Allows method chaining to fluently manipulate the underlying array of Eloquent models.
 
 #### What are Polymorphic Relationships?
-
+`Polymorphic Relationships` allow a model to belong to more than one other model on a single association. Consider a scenario where you have a `Photo` model that might be linked to either a `User` or a `Post` model.
+ - Eloquent can manage these relationships where a single table (e.g., `photos`) holds links to a `User` or a `Post` through a single association.
+ - You achieve this by having an `imageable_id` and `imageable_type` in the `photos` table. The `_id` field relates to the `User` or `Post`, and the `_type` field stores the class name of the parent model.
