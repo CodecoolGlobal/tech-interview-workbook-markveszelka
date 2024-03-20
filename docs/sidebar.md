@@ -10,3 +10,5 @@
         * [4.3 Database](docs/advance_JAVA/module_advanced_data.md)
     * [**5. Test Automation module**](docs/test_automation/module_advanced_test_automation.md)
     * [**6. Test Automation module NEW**](docs/test_automation/module_advanced_test_automation_NEW.md)
+    * [**7. Advanced module with PHP**](docs/advance_PHP/module_advanced_php.md)
+    
