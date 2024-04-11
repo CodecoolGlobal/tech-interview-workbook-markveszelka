@@ -3,13 +3,14 @@
 ### PHP
 
 #### Who is the creator of PHP?
-PHP, originally created in 1994 by Rasmus Lerdorf, started as a simple set of Common Gateway Interface (CGI) binaries written in the C programming language. Initially, it was designed to track visits to his online resume and called "Personal Home Page Tools." Over time, PHP has evolved into a major server-side scripting language for web development.
+PHP, originally created in 1993 (and released in 1995) by Rasmus Lerdorf, started as a simple set of Common Gateway Interface (CGI) binaries written in the C programming language. Initially, it was designed to track visits to his online resume and called "Personal Home Page Tools." Over time, PHP has evolved into a major server-side scripting language for web development.
 
 #### What is new in the latest version of PHP?
 PHP 8.1 introduces enums, readonly properties, fibers, and never return type among other features. For instance, enums provide a way to define a set of named, constant values, improving code readability and reliability. Readonly properties ensure that a property once set cannot be changed. Fibers facilitate non-blocking code execution. The never return type indicates that a function either exits or throws an exception, ensuring clearer intent and error handling.
 
 #### What are PSRs? Choose 1 and briefly describe it.
-PSRs are PHP Standard Recommendations that aim to standardize programming concepts in PHP. For example, `PSR-4` is an autoloading standard, ensuring a consistent way to load classes from file paths. It simplifies the inclusion of PHP files without the need for require or include statements, associating a specific namespace with a directory structure.
+PSRs are PHP Standard Recommendations that aim to standardize programming concepts in PHP. It is a set of guidelines and recommendations for writing clean, consistent, and interoperable PHP code.\
+For example, `PSR-4` is an autoloading standard, ensuring a consistent way to load classes from file paths. It simplifies the inclusion of PHP files without the need for require or include statements, associating a specific namespace with a directory structure.
 
 #### What is "dollar-dollar"? Write some examples for how to use it.
 The $$ is a variable variable in PHP, where the value of one variable is used as the name of another variable.\
@@ -24,7 +25,7 @@ echo "$a $hello"; // also outputs "hello world"
 
 #### What are the different types of arrays you can use in PHP?
 In PHP, there are three types of arrays: indexed arrays, associative arrays, and multidimensional arrays.
- - Indexed arrays have numeric indices.
+ - Indexed arrays have numeric indices (each item has an index number).
  - Associative arrays have named keys.
  - Multidimensional arrays contain other arrays as values.
 
@@ -261,7 +262,8 @@ php artisan up
 Middlewares can be assigned to specific routes, making them extremely flexible for managing access and behaviors across different parts of your application.
 
 #### What are service providers in Laravel?
-`Service Providers` in Laravel are the central place for all Laravel application bootstrapping. Every Laravel application and Laravel package comes with service providers. They are responsible for:
+`Service Providers` in Laravel are the central place for all Laravel application bootstrapping: that is, laravel’s core services and our application’s services, classes and their dependencies are injected in service container through providers. Service providers are the central place to configure the application.\
+Every Laravel application and Laravel package comes with service providers. They are responsible for:
 
  - Binding components into the Laravel service container
  - Registering event listeners
@@ -271,13 +273,16 @@ Middlewares can be assigned to specific routes, making them extremely flexible f
 They essentially dictate how your application is pieced together, making them extremely powerful for configuring services, registering services, and performing core application functions.
 
 #### What are factories in Laravel?
-In the context of Laravel, `factories` are used to generate large amounts of database records conveniently. This is particularly useful for testing or seeding your database with initial data. Laravel's factory feature:
+In the context of Laravel, `factories` are used to generate large amounts of database records conveniently. This is particularly useful for testing or seeding your database with initial data. Instead of manually specifying the value of each column, Laravel allows you to define a set of default attributes for each of your Eloquent models using model factories.\
+In their most basic form, factories are classes that extend Laravel's base factory class and define a definition method. The definition method returns the default set of attribute values that should be applied when creating a model using the factory.
+
+Laravel's factory feature:
  - Defines a model's default state with attribute values to get you started quickly.
  - Allows customization of certain attributes when needed.
  - Works seamlessly with Laravel's ORM, Eloquent, enabling rapid insertion of records into the database.
 
 #### What are facades?
-`Facades` in Laravel provide a "static" interface to classes that are available in the application's service container. They serve to provide a simplified, readable syntax while maintaining more testability and flexibility than traditional static methods.
+`Facades` in Laravel is a class that provides a "static" interface to classes that are available in the application's service container. They serve to provide a simplified, readable syntax while maintaining more testability and flexibility than traditional static methods.
 
  - Facades allow you to use Laravel features without needing to remember long class names that must be injected or configured manually.
  - Essentially, facades are service container wrappers that provide a terse, memorable syntax that facilitates testing and flexibility.
@@ -306,6 +311,8 @@ When to Use:
 #### What is Eloquent? What are the advantages, limitations?
 `Eloquent` is Laravel's implementation of the Active Record ORM pattern. It allows each database table to have a corresponding "Model" which is used to interact with that table.
 
+ `Active Record` pattern is a design pattern that maps database records to objects in the application. In this pattern, each database table has a corresponding model class, which represents a specific record in that table. These model classes contain methods for interacting with the database, such as retrieving, updating, creating, and deleting records.
+
 Advantages:
 
  - `Active Record Implementation`: Simplifies data manipulation.
@@ -321,7 +328,8 @@ Limitations:
  - `Complex Queries`: Extremely complex SQL might need to be written in raw queries if Eloquent cannot handle it elegantly.
 
 #### What is the difference between PDO and Eloquent? Which are the advantages and disadvantages of each?
-`PDO (PHP Data Objects)`: A database access layer providing a uniform method of access to multiple databases.
+`PDO (PHP Data Objects)`: The PHP Data Objects (PDO) extension defines a lightweight interface for accessing databases in PHP.\
+PDO offers a data-access abstraction layer, which means we can issue queries and fetch data using the same functions regardless of which database being used. PDO isn't a database abstraction; it doesn't rewrite SQL or imitates features that aren't accessible.
 
 Advantages:
  - Raw SQL: Offers the ability to use raw SQL for complex queries.
@@ -359,6 +367,9 @@ Importance:
  - They can be re-executed multiple times to refresh the database with the same data, which is especially useful for testing and developing.
 
 #### Name 3 aggregate methods provided by the query builder in Laravel. What can they do for you?
+Laravel's database `query builder` provides an interface to creating and running database queries. It can be used to perform most database operations in the application.\
+The `query builder` also provides a variety of methods for retrieving aggregate values like `count`, `max`, `min`, `avg`, and `sum`.
+
 `count()`: Returns the number of records in a table.
  - Useful for determining the size of a given dataset or table.
 
@@ -368,8 +379,17 @@ Importance:
 `sum('column')`: Calculates the total for a given column.
  - Essential for financial calculations, statistics, or aggregating values.
 
+ ```php
+use Illuminate\Support\Facades\DB;
+ 
+$users = DB::table('users')->count();
+ 
+$price = DB::table('orders')->max('price');
+ ```
+
 #### What is a Model Observer?
-`Model Observers` in Laravel allow you to group event listener logic for a model into a single class. These listeners respond to various lifecycle events of models, such as created, updated, deleted, etc.
+`Model Observers` in Laravel allow you to group event listener logic for a model into a single class. These listeners respond to various lifecycle events of models, such as created, updated, deleted, etc.\
+Observer classes have method names which reflect the Eloquent events you wish to listen for. Each of these methods receives the affected model as their only argument.
  - They are ideal for keeping your model's code clean and focusing on business logic by extracting behavioral responses to model events into their own classes.
 
 #### How would you define Eloquent Collections?
